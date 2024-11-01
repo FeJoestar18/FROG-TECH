@@ -144,8 +144,7 @@
         <img src="../img/logo1.png" alt="Logo">
         <a href="#">HOME</a>
         <a href="#">FUNCIONÁRIOS</a>
-        <a href="#">USUÁRIOS</a>
-        <a href="#">CLIENTES</a>
+        <a href = "../pagina_adm/usuarios_visualizar.php">USUARIOS</a>
         <a href="#">ESTOQUE</a>
     </div>
 
@@ -160,7 +159,7 @@
                 <div class="card spaced-card">
                     <h3>Registro de Funcionários</h3>
                     <p>Gerencie o registro de novos funcionários.</p>
-                    <span class="acessar" onclick="location.href='registro_funcionarios.php'">Acessar</span>
+                    <span class="acessar" onclick="location.href='../pagina_adm/cadastro_funcionario.php'">Acessar</span>
                 </div>
                 <div class="card">
                     <h3>Acesso aos Produtos</h3>
@@ -170,9 +169,9 @@
             </div>
             <div class="row">
                 <div class="card spaced-card">
-                    <h3>Relatórios</h3>
+                    <h3>Departamentos</h3>
                     <p>Gere relatórios de desempenho e vendas.</p>
-                    <span class="acessar" onclick="location.href='relatorios.php'">Acessar</span>
+                    <span class="acessar" onclick="location.href='../pagina_adm/departamento.php'">Acessar</span>
                 </div>
                 <div class="card">
                     <h3>Configurações</h3>
