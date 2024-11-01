@@ -71,3 +71,5 @@ Unmerged paths:
   (use "git add <file>..." to mark resolution)
     both modified:   <nome_do_arquivo_1>
     both modified:   <nome_do_arquivo_2>
+
+16 17 19

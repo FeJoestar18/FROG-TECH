@@ -6,7 +6,6 @@ $sql = "SELECT nome, email, tempo_contrato, endereco, idade, salario, cpf, rg, a
 $result = $conn->query($sql);
 ?>
 
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -52,7 +51,7 @@ $result = $conn->query($sql);
                         <td><?php echo $row["tempo_contrato"]; ?></td>
                         <td><?php echo $row["endereco"]; ?></td>
                         <td><?php echo $row["idade"]; ?></td>
-                        <td><?php echo $row["salario"]; ?></td>
+                        <td><?php echo "" . number_format($row['salario'], 2, ',', '.'); ?></td> <!-- Correção aqui -->
                         <td><?php echo $row["cpf"]; ?></td>
                         <td><?php echo $row["rg"]; ?></td>
                         <td><?php echo $row["atividade"]; ?></td>
