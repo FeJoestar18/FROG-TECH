@@ -122,7 +122,7 @@ if ($conn->connect_error) {
 
     <div class="sidebar" id="sidebarMenu">
         <ul>
-            <li><a href="../paginas_iniciais/loja.html">Loja</a></li>
+            <li><a href="../paginas_iniciais/loja.php">Loja</a></li>
             <li><a href="../itens_loja/carrinho.php">Carrinho de Compras</a></li>
             <li><a href="../paginas_cadastros/Perfil.php">Perfil de Usuário</a></li>
             <li><a href="../paginas_cadastros/logout.php" class="logout">Sair</a></li>

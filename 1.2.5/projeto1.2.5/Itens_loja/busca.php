@@ -222,7 +222,7 @@
 <div class="sidebar" id="sidebarMenu">
     <ul>
     <li><a href="../paginas_iniciais/paginahome.php">Home</a></li>
-            <li><a href="../paginas_iniciais/loja.html">Loja</a></li>
+            <li><a href="../paginas_iniciais/loja.php">Loja</a></li>
             <li><a href="../paginas_cadastros/perfil.php">Perfil de Usuário</a></li>
             <li><a href="../paginas_cadastros/logout.php" class="logout">Sair</a></li>
     </ul>
