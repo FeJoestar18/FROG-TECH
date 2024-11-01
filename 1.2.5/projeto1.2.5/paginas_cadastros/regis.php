@@ -11,14 +11,13 @@
         }
 
         .header {
-    position: absolute;
-    top: -5px; /* Ajuste de 10px para 5px para mover a logo mais para cima */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 1;
-}
-
+            position: absolute;
+            top: -5px; /* Ajuste de 10px para 5px para mover a logo mais para cima */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+        }
 
         .header img.main-logo {
             width: 420px; /* Ajuste do tamanho da logo para manter padrão */
@@ -57,15 +56,6 @@
             width: 100%;
             box-sizing: border-box;
             border: 1px solid #ccc;
-        }
-
-        .input-container .icon {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 18px;
-            color: #555;
         }
 
         button {
@@ -107,6 +97,16 @@
     </style>
 </head>
 <body>
+    <?php
+    session_start(); // Inicia a sessão
+
+    // Verifica se o usuário já está logado
+    if (isset($_SESSION['email'])) {
+        header("Location: ../paginas_iniciais/paginahome.php"); // Redireciona para a página inicial
+        exit(); // Encerra o script para evitar que o resto da página seja carregado
+    }
+    ?>
+
     <header>
         <div class="header">
             <img src="../img/logo2.png" alt="Logo" class="main-logo">
@@ -120,17 +120,17 @@
                 <input type="text" placeholder="Nome" name="nome" required>
             </div>
             <div class="input-container">              
-               <input type="email" placeholder="Email" name="email" required pattern=".+@.+\..+" title="O e-mail deve conter @ e um domínio.">
+                <input type="email" placeholder="Email" name="email" required pattern=".+@.+\..+" title="O e-mail deve conter @ e um domínio.">
             </div>
             <div class="input-container">              
-                <input type="tel" placeholder="Telefone" name="telefone"  required maxlength="11" pattern="\d{11}">
+                <input type="tel" placeholder="Telefone" name="telefone" required maxlength="11" pattern="\d{11}">
             </div>
             <div class="input-container">
                 <input type="password" placeholder="Senha" name="senha" required pattern="(?=.*\d)(?=.*[@]).{8,}" title="A senha deve ter pelo menos 8 caracteres, incluir um número e um símbolo @.">
             </div>
             <div class="input-container"> 
-    <input type="text" placeholder="CPF" name="CPF" required maxlength="11" pattern="\d{11}">
-</div>
+                <input type="text" placeholder="CPF" name="CPF" required maxlength="11" pattern="\d{11}">
+            </div>
 
             <button type="submit">Registrar</button>
         </form>
