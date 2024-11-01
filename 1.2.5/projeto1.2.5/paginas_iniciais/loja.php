@@ -171,12 +171,7 @@ if ($conn->connect_error) {
     </section>
 
     <script>
-        const menuIcon = document.getElementById('menuIcon');
-        const sidebar = document.getElementById('sidebarMenu');
-
-        menuIcon.addEventListener('click', () => {
-            sidebar.classList.toggle('open');
-        });
+        
     </script>
 
     <?php
