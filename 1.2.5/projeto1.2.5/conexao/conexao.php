@@ -1,16 +1,15 @@
 <?php
+// Parâmetros de conexão
 $server = "localhost";
 $user = "root";
 $pass = "";
-$database = "frogtech"; 
+$database = "frog";
 
-$conn = mysqli_connect($server, $user, $pass, $database); // Renomeie para $conn
+// Cria a conexão (orientado a objetos)
+$conn = new mysqli($server, $user, $pass, $database);
 
-if (!$conn) {
-    die("Falha na conexão: " . mysqli_connect_error());
-}
-
-function mensagem($texto, $tipo) {
-    echo "<div class='alert alert-$tipo' role='alert'>$texto</div>";
+// Verifica se a conexão foi bem-sucedida
+if ($conn->connect_error) {
+    die("Falha na conexão: " . $conn->connect_error);
 }
 ?>

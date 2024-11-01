@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$database = "frogtech";
+$database = "frog";
 
 $mysqli = new mysqli($host, $user, $password, $database);
 

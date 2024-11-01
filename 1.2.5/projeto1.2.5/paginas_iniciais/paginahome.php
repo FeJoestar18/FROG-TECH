@@ -189,7 +189,7 @@ include ('../conexao/conexao.php');
     <div class="titulo">
         <h1>Bem-vindo à Frog Tech</h1>
         <h3>Seu e-commerce de tecnologia</h3>
-        <a href="loja.html" class="shop-btn">Ir às Compras</a>
+        <a href="../paginas_iniciais/loja.php" class="shop-btn">Ir às Compras</a>
     </div>
 
     <script>
