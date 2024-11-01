@@ -13,7 +13,7 @@ include ('../conexao/conexao.php');
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-       
+        /* Estilos Globais */
         * {
             margin: 0;
             padding: 0;
@@ -64,10 +64,12 @@ include ('../conexao/conexao.php');
         }
 
         .titulo {
-            margin-top: 120px;
-            text-align: center;
-            padding: 20px;
-        }
+    margin-top: 65px; /* Reduzindo o espaçamento superior */
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
 
         .titulo h1 {
             color: #333;
@@ -134,13 +136,13 @@ include ('../conexao/conexao.php');
             font-size: 1.1rem;
             transition: color 0.3s ease;
         }
+
         .sidebar ul li a.logout {
-            color: 
-            #4CAF50;
+            color: #4CAF50;
         }
 
         .sidebar ul li a:hover {
-            color:#ff0000 ;
+            color: #ff0000;
         }
 
         .overlay {
@@ -158,7 +160,89 @@ include ('../conexao/conexao.php');
             display: block;
         }
 
-        
+        /* Estilo do Carrossel */
+        .carousel-container {
+            position: relative;
+            width: 80%;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .card {
+            min-width: 250px;
+            height: 250px;
+            margin: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .card button {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .card button:hover {
+            background-color: #555;
+        }
+
+        .nav-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+            background-color: #333;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background-color: #555;
+            transform: scale(1.2);
+        }
+
+        .nav-dot:hover {
+            background-color: #777;
+        }
     </style>
 </head>
 
@@ -173,7 +257,6 @@ include ('../conexao/conexao.php');
             <div class="bar"></div>
         </div>
     </header>
-    </div>
 
     <div class="sidebar" id="sidebarMenu">
         <ul>
@@ -192,11 +275,55 @@ include ('../conexao/conexao.php');
         <a href="../paginas_iniciais/loja.php" class="shop-btn">Ir às Compras</a>
     </div>
 
+    <!-- Carrossel -->
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <div class="card">
+                <h3>Produto 1</h3>
+                <p>Descrição breve do produto 1.</p>
+                <button onclick="window.location.href='#'">Ir para o produto</button>
+            </div>
+            <div class="card">
+                <h3>Produto 2</h3>
+                <p>Descrição breve do produto 2.</p>
+                <button onclick="window.location.href='#'">Ir para o produto</button>
+            </div>
+            <div class="card">
+                <h3>Produto 3</h3>
+                <p>Descrição breve do produto 3.</p>
+                <button onclick="window.location.href='#'">Ir para o produto</button>
+            </div>
+            <div class="card">
+                <h3>Produto 4</h3>
+                <p>Descrição breve do produto 4.</p>
+                <button onclick="window.location.href='#'">Ir para o produto</button>
+            </div>
+            <div class="card">
+                <h3>Produto 5</h3>
+                <p>Descrição breve do produto 4.</p>
+                <button onclick="window.location.href='#'">Ir para o produto</button>
+            </div>
+            <div class="card">
+                <h3>Produto 6</h3>
+                <p>Descrição breve do produto 4.</p>
+                <button onclick="window.location.href='#'">Ir para o produto</button>
+            </div>
+        </div>
+
+        <!-- Bolinhas de Navegação -->
+        <div class="nav-dots">
+            <div class="nav-dot active" data-index="0"></div>
+            <div class="nav-dot" data-index="1"></div>
+            <div class="nav-dot" data-index="2"></div>
+            <div class="nav-dot" data-index="3"></div>
+        </div>
+    </div>
+
     <script>
         const menuIcon = document.getElementById('menuIcon');
         const sidebar = document.getElementById('sidebarMenu');
         const overlay = document.getElementById('overlay');
-
+        
         menuIcon.addEventListener('click', () => {
             sidebar.classList.toggle('open');
             overlay.classList.toggle('show');
@@ -206,7 +333,17 @@ include ('../conexao/conexao.php');
             sidebar.classList.remove('open');
             overlay.classList.remove('show');
         });
+
+        const track = document.querySelector('.carousel-track');
+        const dots = document.querySelectorAll('.nav-dot');
+
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                track.style.transform = `translateX(-${idx * 250}px)`;
+                dots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+            });
+        });
     </script>
 </body>
-
 </html>
