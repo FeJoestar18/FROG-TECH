@@ -142,10 +142,11 @@
 <body>
     <div class="sidebar">
         <img src="../img/logo1.png" alt="Logo">
-        <a href="#">HOME</a>
-        <a href="#">FUNCIONÁRIOS</a>
+        <a href="../paginas_iniciais/paginahome.php">PAGINA HOME</a>
+        <a href="../pagina_adm/funcionario.php">FUNCIONÁRIOS</a>
         <a href = "../pagina_adm/usuarios_visualizar.php">USUARIOS</a>
         <a href="#">ESTOQUE</a>
+       
     </div>
 
     <header>
