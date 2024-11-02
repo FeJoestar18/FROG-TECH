@@ -181,11 +181,17 @@ if ($conn->connect_error) {
 
     <div class="sidebar" id="sidebarMenu">
         <ul>
+<<<<<<< HEAD
         <li><a href="../paginas_iniciais/paginahome.php">Home</a></li>
             <li><a href="../paginas_iniciais/loja.php">Loja</a></li>
             <li><a href="../Itens_loja/buscar.php">Buscar</a></li>
             <li><a href="../Itens_loja/carrinho.php">Carrinho de Compras</a></li>
             <li><a href="../paginas_cadastros/perfil.php">Perfil de Usuário</a></li>
+=======
+            <li><a href="../paginas_iniciais/loja.php">Loja</a></li>
+            <li><a href="../itens_loja/carrinho.php">Carrinho de Compras</a></li>
+            <li><a href="../paginas_cadastros/Perfil.php">Perfil de Usuário</a></li>
+>>>>>>> 59fcb99dfd03c3e90abfc114586ecdd3251cab54
             <li><a href="../paginas_cadastros/logout.php" class="logout">Sair</a></li>
         </ul>
         <div class="logo-footer">
@@ -242,6 +248,7 @@ if ($conn->connect_error) {
     </section>
 
     <script>
+<<<<<<< HEAD
         const menuIcon = document.getElementById('menuIcon');
         const sidebar = document.getElementById('sidebarMenu');
 
@@ -271,6 +278,9 @@ if ($conn->connect_error) {
                 }
             }
         }
+=======
+        
+>>>>>>> 59fcb99dfd03c3e90abfc114586ecdd3251cab54
     </script>
 
     <?php

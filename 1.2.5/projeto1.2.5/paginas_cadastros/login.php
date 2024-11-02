@@ -40,7 +40,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             header("Location: ../paginas_iniciais/paginahome.php");
             exit();
         } else {
-            header("Location: ../paginas_cadastros/testeaudio.html");
+           echo "Email ou senha inválidos";
         }
     }
 }

@@ -216,12 +216,33 @@ $result_categorias = $conn->query($sql_categorias);
         </div>
     </header>
 
+<<<<<<< HEAD
     <div class="sidebar" id="sidebarMenu">
         <ul>
             <li><a href="../paginas_iniciais/paginahome.php">Home</a></li>
             <li><a href="../paginas_iniciais/loja.php">Loja</a></li>
             <li><a href="../itens_loja/buscar.php">Buscar</a></li>
             <li><a href="../Itens_loja/carrinho.php">Carrinho de Compras</a></li>
+=======
+<!-- Cabeçalho -->
+<header>
+    <div class="logo">
+        <img src="../img/logo1.png" alt="Logo da Loja">
+    </div>
+    <h1>Frog Tech</h1>
+    <div class="menu-icon" id="menuIcon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</header>
+
+<!-- Menu Lateral -->
+<div class="sidebar" id="sidebarMenu">
+    <ul>
+    <li><a href="../paginas_iniciais/paginahome.php">Home</a></li>
+            <li><a href="../paginas_iniciais/loja.php">Loja</a></li>
+>>>>>>> 59fcb99dfd03c3e90abfc114586ecdd3251cab54
             <li><a href="../paginas_cadastros/perfil.php">Perfil de Usuário</a></li>
             <li><a href="../paginas_cadastros/logout.php" class="logout">Sair</a></li>
         </ul>
