@@ -65,9 +65,69 @@ if ($conn->connect_error) {
             transition: 0.3s;
         }
 
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -250px; /* Escondido inicialmente */
+            width: 250px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+            transition: right 0.3s ease;
+            padding-top: 60px; /* Para não ficar atrás do header */
+            z-index: 999;
+        }
+
+        .sidebar.open {
+            right: 0; /* Mover para a direita quando aberto */
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin: 15px 0;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .sidebar .logo-footer {
+            position: absolute;
+            bottom: 20px; /* Distância do fundo */
+            left: 50%;
+            transform: translateX(-50%); /* Centraliza a logo */
+            text-align: center;
+        }
+
         .produtos {
             margin-top: 100px; /* Para não ficar atrás do header */
             padding: 20px;
+        }
+
+        .search-container {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-container input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
         }
 
         .grid-container {
@@ -106,7 +166,6 @@ if ($conn->connect_error) {
             background-color: #388e3c;
         }
     </style>
-</style>
 </head>
 <body>
     <header>
@@ -122,16 +181,27 @@ if ($conn->connect_error) {
 
     <div class="sidebar" id="sidebarMenu">
         <ul>
-            <li><a href="../paginas_iniciais/loja.html">Loja</a></li>
-            <li><a href="../itens_loja/carrinho.php">Carrinho de Compras</a></li>
-            <li><a href="../paginas_cadastros/Perfil.php">Perfil de Usuário</a></li>
+        <li><a href="../paginas_iniciais/paginahome.php">Home</a></li>
+            <li><a href="../paginas_iniciais/loja.php">Loja</a></li>
+            <li><a href="../Itens_loja/buscar.php">Buscar</a></li>
+            <li><a href="../Itens_loja/carrinho.php">Carrinho de Compras</a></li>
+            <li><a href="../paginas_cadastros/perfil.php">Perfil de Usuário</a></li>
             <li><a href="../paginas_cadastros/logout.php" class="logout">Sair</a></li>
         </ul>
+        <div class="logo-footer">
+            <img src="../img/logo1.png" alt="Frog Tech Logo" style="width: 80px; height: auto;">
+        </div>
     </div>
 
     <section class="produtos">
         <h2>Nossos Produtos</h2>
-        <div class="grid-container">
+
+        <!-- Adicionando o campo de busca -->
+        <div class="search-container">
+            <input type="text" placeholder="Buscar produtos..." id="searchInput" onkeyup="filterProducts()">
+        </div>
+
+        <div class="grid-container" id="productGrid">
             <?php
             // Defina o caminho base para as imagens
             $base_path = '/TESTE133/1.2.5/projeto1.2.5/Itens_loja/uploadfotos/';
@@ -139,7 +209,7 @@ if ($conn->connect_error) {
             // Verifique se a conexão ainda está aberta
             if ($conn) {
                 // Consulta para buscar todos os produtos
-                $sql = "SELECT nome, preco, imagem FROM produtos"; 
+                $sql = "SELECT id, nome, preco, imagem FROM produtos"; 
                 $result = $conn->query($sql);
                 
                 // Verifique se a consulta foi bem-sucedida
@@ -149,12 +219,13 @@ if ($conn->connect_error) {
                     // Exiba os produtos
                     while ($produto = $result->fetch_assoc()) {
                         $imagem = htmlspecialchars($produto["imagem"]); // Escapar a imagem
+                        $id = $produto['id']; // Supondo que você tenha um campo 'id' na tabela
                         echo '
-                        <div class="produto">
+                        <div class="produto" data-nome="' . htmlspecialchars($produto["nome"]) . '">
                             <img src="' . $base_path . $imagem . '" alt="' . htmlspecialchars($produto["nome"]) . '">
                             <h3>' . htmlspecialchars($produto["nome"]) . '</h3>
                             <p>R$ ' . number_format($produto["preco"], 2, ',', '.') . '</p>
-                            <a href="#" class="btn-comprar">Comprar</a>
+                            <a href="../itens_loja/detalhes_produto.php?id=' . $id . '" class="btn-comprar">Comprar</a>
                         </div>';
                     }
                 } else {
@@ -177,6 +248,29 @@ if ($conn->connect_error) {
         menuIcon.addEventListener('click', () => {
             sidebar.classList.toggle('open');
         });
+
+        document.addEventListener('click', (event) => {
+            // Verifica se o clique foi fora do sidebar e do ícone do menu
+            if (!sidebar.contains(event.target) && !menuIcon.contains(event.target)) {
+                sidebar.classList.remove('open'); // Fecha o sidebar
+            }
+        });
+
+        function filterProducts() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const grid = document.getElementById('productGrid');
+            const produtos = grid.getElementsByClassName('produto');
+
+            for (let i = 0; i < produtos.length; i++) {
+                const nome = produtos[i].getAttribute('data-nome').toLowerCase();
+                if (nome.includes(filter)) {
+                    produtos[i].style.display = ""; // Mostrar produto
+                } else {
+                    produtos[i].style.display = "none"; // Esconder produto
+                }
+            }
+        }
     </script>
 
     <?php

@@ -1,12 +1,25 @@
+<?php
+// Inclua o arquivo de conexão com o banco de dados
+include('../conexao/conexao.php');
+
+// Certifique-se de que a conexão está ativa
+if ($conn->connect_error) {
+    die("Falha na conexão: " . $conn->connect_error);
+}
+
+// Obter categorias para o dropdown
+$sql_categorias = "SELECT * FROM categoria";
+$result_categorias = $conn->query($sql_categorias);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busca de Produtos - Frog Tech</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Reset */
         * {
             margin: 0;
             padding: 0;
@@ -15,32 +28,27 @@
         }
 
         body {
-            background-color: #f4f4f4;
+            background-color: #fafafa;
             color: #333;
+            line-height: 1.6;
         }
 
         header {
             background-color: #fff;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 15px;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo img {
-            width: 80px;
-            border-radius: 50%;
-        }
-
-        h1 {
-            font-size: 2em;
-            color: #2e7d32;
-            font-weight: 600;
+            width: 180px;
+            height: auto;
         }
 
         .menu-icon {
@@ -50,6 +58,7 @@
             width: 30px;
             height: 20px;
             cursor: pointer;
+            transition: 0.3s;
         }
 
         .bar {
@@ -63,301 +72,252 @@
         .sidebar {
             position: fixed;
             top: 0;
-            right: -300px;
-            width: 300px;
+            right: -250px; /* Escondido inicialmente */
+            width: 250px;
             height: 100%;
             background-color: #fff;
-            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
-            transition: 0.5s ease;
-            z-index: 1001;
-            padding-top: 60px;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+            transition: right 0.3s ease;
+            padding-top: 60px; /* Para não ficar atrás do header */
+            z-index: 999;
         }
 
         .sidebar.open {
-            right: 0;
+            right: 0; /* Mover para a direita quando aberto */
         }
 
         .sidebar ul {
-            list-style: none;
-            padding: 20px;
-            margin: 0;
+            list-style-type: none;
+            padding: 0;
         }
 
-        .sidebar ul li {
-            padding: 15px 0;
-            border-bottom: 1px solid #e1e1e1;
+        .sidebar li {
+            margin: 15px 0;
         }
 
-        .sidebar ul li a {
+        .sidebar a {
             text-decoration: none;
             color: #333;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .sidebar ul li a:hover {
-            color: #2e7d32;
-        }
-
-        .sidebar ul li a.logout {
-            color: #ff0000;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: none;
-            z-index: 1000;
-        }
-
-        .overlay.show {
+            padding: 10px 15px;
             display: block;
+            transition: background 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .produtos {
+            margin-top: 100px; /* Para não ficar atrás do header */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza os itens no contêiner */
         }
 
         .search-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: 120px auto 20px;
-        }
-
-        .search-container h1 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            text-align: center;
-        }
-
-        .search-container form {
+            margin: 20px 0;
             display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .search-container label {
-            font-size: 18px;
-            font-weight: bold;
+            justify-content: center;
+            align-items: center; /* Alinha verticalmente ao centro */
+            flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha */
         }
 
         .search-container input,
         .search-container select {
             padding: 10px;
-            font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            width: 100%;
+            margin-right: 10px;
+            width: 250px; /* Largura fixa para os campos de entrada */
+            max-width: 100%; /* Garante responsividade */
         }
 
         .search-container button {
-            padding: 10px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #28a745;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         .search-container button:hover {
-            background-color: #218838;
+            background-color: #388e3c;
         }
 
-        .results ul {
-            list-style-type: none;
-            padding: 0;
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 1200px; /* Limita a largura máxima para centralizar o conteúdo */
+            width: 100%; /* Garante que o contêiner use toda a largura disponível */
         }
 
-        .results li {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 10px;
+        .produto {
+            background: white;
+            border: 1px solid #e1e1e1;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            width: 200px;
         }
 
-        .results img {
-            max-width: 200px;
+        .produto img {
+            max-width: 100%;
             height: auto;
-            display: block;
-            margin-bottom: 10px;
         }
 
-        .results h3 {
-            margin-bottom: 10px;
+        .btn-comprar {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
-        .results p {
-            margin: 5px 0;
+        .btn-comprar:hover {
+            background-color: #388e3c;
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 1.5em;
+            .sidebar {
+                width: 200px; /* Reduzir a largura do sidebar em telas menores */
+            }
+            .produtos {
+                margin-left: 0; /* Remove o espaço para o sidebar em telas menores */
+            }
+            .search-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .search-container input,
+            .search-container select {
+                width: 100%; /* Campo de busca ocupa toda a largura */
+                margin-bottom: 10px;
             }
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo2.png" alt="Frog Tech Logo">
+        </div>
+        <div class="menu-icon" id="menuIcon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
 
-<!-- Cabeçalho -->
-<header>
-    <div class="logo">
-        <img src="../img/logo1.png" alt="Logo da Loja">
-    </div>
-    <h1>Frog Tech</h1>
-    <div class="menu-icon" id="menuIcon">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
-</header>
-
-<!-- Menu Lateral -->
-<div class="sidebar" id="sidebarMenu">
-    <ul>
-    <li><a href="../paginas_iniciais/paginahome.php">Home</a></li>
-            <li><a href="../paginas_iniciais/loja.html">Loja</a></li>
+    <div class="sidebar" id="sidebarMenu">
+        <ul>
+            <li><a href="../paginas_iniciais/paginahome.php">Home</a></li>
+            <li><a href="../paginas_iniciais/loja.php">Loja</a></li>
+            <li><a href="../itens_loja/buscar.php">Buscar</a></li>
+            <li><a href="../Itens_loja/carrinho.php">Carrinho de Compras</a></li>
             <li><a href="../paginas_cadastros/perfil.php">Perfil de Usuário</a></li>
             <li><a href="../paginas_cadastros/logout.php" class="logout">Sair</a></li>
-    </ul>
-</div>
-<div class="overlay" id="overlay"></div>
+        </ul>
+        <div class="logo-footer" style="text-align: center; padding: 20px;">
+            <img src="../img/logo1.png" alt="Logo Footer" style="width: 100px;">
+        </div>
+    </div>
 
-<!-- Seção de Busca -->
-<div class="search-container">
-    <h1>Buscar Produtos</h1>
-    <form method="POST">
-        <label for="search">Termo de Busca:</label>
-        <input type="text" id="search" name="q" placeholder="Digite o nome ou descrição do produto">
+    <div class="produtos">
+        <div class="search-container">
+            <form method="POST" style="display: flex; align-items: center;">
+                <input type="text" name="q" placeholder="Buscar por nome">
+                <select name="categoria">
+                    <option value="">Selecione uma categoria</option>
+                    <?php while ($categoria = $result_categorias->fetch_assoc()): ?>
+                        <option value="<?php echo $categoria['id']; ?>"><?php echo $categoria['nome']; ?></option>
+                    <?php endwhile; ?>
+                </select>
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
 
-        <label for="categoria">Categoria:</label>
-        <select id="categoria" name="categoria">
-            <option value="">Todas as Categorias</option>
-            <option value="Eletrônico">Eletrônico</option>
-            <option value="Periférico">Periférico</option>
-            <option value="Networking">Networking</option>
-            <option value="Armazenamento">Armazenamento</option>
-            <option value="Acessório">Acessório</option>
-        </select>
+        <div class="grid-container">
+            <?php
+            // Verificar se o formulário foi enviado
+            if (isset($_POST['q']) || isset($_POST['categoria'])) {
+                $busca = $conn->real_escape_string($_POST['q']);
+                $categoria_id = isset($_POST['categoria']) ? (int)$_POST['categoria'] : 0;
 
-        <button type="submit">Buscar</button>
-    </form>
-</div>
+                // Montar a consulta SQL
+                $sql = "SELECT produtos.*, categoria.nome AS nome_categoria 
+                        FROM produtos 
+                        JOIN categoria ON produtos.categoria_id = categoria.id 
+                        WHERE 1=1";
 
-<!-- Resultados da Busca -->
-<div class="results">
-    <?php
-    // Configurações de conexão com o banco de dados
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "noc";
-
-    // Conexão ao banco de dados
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Verificar se houve erro na conexão
-    if ($conn->connect_error) {
-        die("Conexão falhou: " . $conn->connect_error);
-    }
-
-    // Verificar se o formulário foi enviado
-    if (isset($_POST['q']) || isset($_POST['categoria'])) {
-        // Pegar o termo de pesquisa e tratar para evitar SQL injection
-        $busca = isset($_POST['q']) ? $conn->real_escape_string($_POST['q']) : '';
-        $categoria = isset($_POST['categoria']) ? $conn->real_escape_string($_POST['categoria']) : '';
-
-        // Montar a consulta SQL
-        $sql = "SELECT produtos.*, categoria.nome AS nome_categoria 
-                FROM produtos 
-                JOIN categoria ON produtos.categoria_id = categoria.id 
-                WHERE 1=1"; // Usa WHERE 1=1 para facilitar a adição de condições dinâmicas
-
-        // Se um termo de busca for fornecido
-        if (!empty($busca)) {
-            $sql .= " AND (produtos.nome LIKE '%$busca%' OR produtos.descricao LIKE '%$busca%')";
-        }
-
-        // Se uma categoria for selecionada
-        if (!empty($categoria)) {
-            $sql .= " AND categoria.nome = '$categoria'";
-        }
-
-        // Executar a consulta
-        $resultado = $conn->query($sql);
-
-        // Verificar se há resultados
-        if ($resultado->num_rows > 0) {
-            echo "<h2>Resultados da busca</h2>";
-            echo "<ul>"; // Usar lista para exibir os produtos
-
-            // Exibir os resultados
-            while ($produto = $resultado->fetch_assoc()) {
-                echo "<li>";
-                
-                // Exibir a imagem do produto
-                if (!empty($produto['imagem'])) {
-                    echo "<img src='" . htmlspecialchars($produto['imagem']) . "' alt='" . htmlspecialchars($produto['nome']) . "'/>";
+                // Se um termo de busca for fornecido
+                if (!empty($busca)) {
+                    $sql .= " AND (produtos.nome LIKE '%$busca%' OR produtos.descricao LIKE '%$busca%')";
                 }
 
-                // Exibir o nome do produto
-                echo "<h3>" . htmlspecialchars($produto['nome']) . "</h3>";
+                // Se uma categoria foi selecionada
+                if ($categoria_id > 0) {
+                    $sql .= " AND produtos.categoria_id = $categoria_id";
+                }
 
-                // Exibir a descrição do produto
-                echo "<p>" . htmlspecialchars($produto['descricao']) . "</p>";
+                // Executar a consulta
+                $resultado = $conn->query($sql);
 
-                // Exibir a categoria do produto
-                echo "<p><strong>Categoria:</strong> " . htmlspecialchars($produto['nome_categoria']) . "</p>";
+                // Verificar se há resultados
+                if ($resultado && $resultado->num_rows > 0) {
+                    // Exibir os produtos
+                    while ($produto = $resultado->fetch_assoc()) {
+                        $id = $produto['id'];
+                        $base_path = "http://localhost/TESTE133/1.2.5/projeto1.2.5/Itens_loja/uploadfotos/";
 
-                // Exibir o preço do produto
-                echo "<p><strong>Preço:</strong> R$ " . number_format($produto['preco'], 2, ',', '.') . "</p>";
-                echo "</li>";
+                        // Verificar se a chave 'imagem' existe e não está vazia
+                        if (isset($produto["imagem"]) && !empty($produto["imagem"])) {
+                            $imagem = htmlspecialchars($produto["imagem"]); // Escapar a imagem
+                            echo '
+                            <div class="produto" data-nome="' . htmlspecialchars($produto["nome"]) . '">
+                                <img src="' . $base_path . $imagem . '" alt="' . htmlspecialchars($produto["nome"]) . '">
+                                <h3>' . htmlspecialchars($produto["nome"]) . '</h3>
+                                <p>R$ ' . number_format($produto["preco"], 2, ',', '.') . '</p>
+                                <a href="../itens_loja/detalhes_produto.php?id=' . $id . '" class="btn-comprar">Comprar</a>
+                            </div>';
+                        } else {
+                            // Exibir quando a imagem não está disponível
+                            echo '
+                            <div class="produto" data-nome="' . htmlspecialchars($produto["nome"]) . '">
+                                <p>Imagem não disponível</p>
+                                <h3>' . htmlspecialchars($produto["nome"]) . '</h3>
+                                <p>R$ ' . number_format($produto["preco"], 2, ',', '.') . '</p>
+                                <a href="../itens_loja/detalhes_produto.php?id=' . $id . '" class="btn-comprar">Comprar</a>
+                            </div>';
+                        }
+                    }
+                } else {
+                    echo "<h2>Nenhum produto encontrado.</h2>";
+                }
+            } else {
+                echo "<h2>Por favor, insira um termo de busca ou selecione uma categoria.</h2>";
             }
 
-            echo "</ul>";
-        } else {
-            echo "<h2>Nenhum produto encontrado.</h2>";
+            // Fechar a conexão com o banco de dados
+            $conn->close();
+            ?>
+        </div>
+    </div>
+
+    <script>
+        const menuIcon = document.getElementById('menuIcon');
+        const sidebarMenu = document.getElementById('sidebarMenu');
+
+        menuIcon.onclick = function() {
+            sidebarMenu.classList.toggle('open');
         }
-    } else {
-        echo "<h2>Por favor, insira um termo de busca ou selecione uma categoria.</h2>";
-    }
-
-    // Fechar a conexão com o banco de dados
-    $conn->close();
-    ?>
-</div>
-
-<script>
-    const menuIcon = document.getElementById('menuIcon');
-    const sidebarMenu = document.getElementById('sidebarMenu');
-    const overlay = document.getElementById('overlay');
-
-    // Abrir menu lateral ao clicar no ícone
-    menuIcon.addEventListener('click', () => {
-        sidebarMenu.classList.toggle('open');
-        overlay.classList.toggle('show');
-    });
-
-    // Fechar o menu lateral ao clicar no overlay
-    overlay.addEventListener('click', () => {
-        sidebarMenu.classList.remove('open');
-        overlay.classList.remove('show');
-    });
-
-    // Fechar o menu lateral ao pressionar a tecla "Esc"
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            sidebarMenu.classList.remove('open');
-            overlay.classList.remove('show');
-        }
-    });
-</script>
-
+    </script>
 </body>
 </html>

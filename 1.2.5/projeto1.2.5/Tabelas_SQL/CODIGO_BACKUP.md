@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01/11/2024 às 14:41
+-- Tempo de geração: 02/11/2024 às 01:33
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -81,10 +81,36 @@ INSERT INTO `departamento` (`id_departamento`, `descrição`, `gerente`, `num_fu
 
 CREATE TABLE `estoque` (
   `id` int(11) NOT NULL,
-  `produto_id` int(11) DEFAULT NULL,
+  `produto_id` int(11) NOT NULL,
   `quantidade` int(11) NOT NULL,
   `atualizado_em` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `estoque`
+--
+
+INSERT INTO `estoque` (`id`, `produto_id`, `quantidade`, `atualizado_em`) VALUES
+(1, 1, 10, '2024-11-01 19:38:18'),
+(2, 4, 10, '2024-11-01 19:38:18'),
+(3, 8, 10, '2024-11-01 19:38:18'),
+(4, 19, 10, '2024-11-01 19:38:18'),
+(5, 20, 10, '2024-11-01 19:38:18'),
+(6, 2, 10, '2024-11-01 19:38:18'),
+(7, 5, 10, '2024-11-01 19:38:18'),
+(8, 6, 10, '2024-11-01 19:38:18'),
+(9, 15, 10, '2024-11-01 19:38:18'),
+(10, 16, 10, '2024-11-01 19:38:18'),
+(11, 17, 10, '2024-11-01 19:38:18'),
+(12, 18, 10, '2024-11-01 19:38:18'),
+(13, 3, 10, '2024-11-01 19:38:18'),
+(14, 9, 10, '2024-11-01 19:38:18'),
+(15, 7, 10, '2024-11-01 19:38:18'),
+(16, 10, 10, '2024-11-01 19:38:18'),
+(17, 11, 10, '2024-11-01 19:38:18'),
+(18, 12, 10, '2024-11-01 19:38:18'),
+(19, 13, 10, '2024-11-01 19:38:18'),
+(20, 14, 10, '2024-11-01 19:38:18');
 
 -- --------------------------------------------------------
 
@@ -144,6 +170,13 @@ CREATE TABLE `pessoa` (
   `cpf` char(11) DEFAULT NULL,
   `telefone` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `pessoa`
+--
+
+INSERT INTO `pessoa` (`id`, `nome`, `email`, `senha`, `cpf`, `telefone`) VALUES
+(1, 'Rayssa Geyziele Leite Pires', 'rayssaleitepires@gmail.com', '123456789@', '48369979840', NULL);
 
 -- --------------------------------------------------------
 
@@ -281,7 +314,7 @@ ALTER TABLE `departamento`
 -- AUTO_INCREMENT de tabela `estoque`
 --
 ALTER TABLE `estoque`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de tabela `funcionarios`
@@ -299,7 +332,7 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT de tabela `pessoa`
 --
 ALTER TABLE `pessoa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
@@ -321,7 +354,7 @@ ALTER TABLE `vendas`
 -- Restrições para tabelas `estoque`
 --
 ALTER TABLE `estoque`
-  ADD CONSTRAINT `estoque_ibfk_1` FOREIGN KEY (`produto_id`) REFERENCES `produtos` (`id`);
+  ADD CONSTRAINT `estoque_ibfk_1` FOREIGN KEY (`produto_id`) REFERENCES `produtos` (`id`) ON DELETE CASCADE;
 
 --
 -- Restrições para tabelas `produtos`
