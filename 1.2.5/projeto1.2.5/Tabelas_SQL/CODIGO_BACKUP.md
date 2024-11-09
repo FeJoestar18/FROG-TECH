@@ -199,27 +199,28 @@ CREATE TABLE `produtos` (
 -- Despejando dados para a tabela `produtos`
 --
 
-INSERT INTO `produtos` (`id`, `nome`, `descricao`, `preco`, `categoria_id`, `criado_em`, `link`, `imagem`) VALUES
-(1, 'Notebook Dell Inspiron 15', 'Notebook de alta performance para uso geral', 3500.00, 1, '2024-11-01 01:10:27', NULL, 'um.png'),
-(2, 'Mouse Gamer Logitech G502', 'Mouse gamer com alta precisão e customizável', 250.00, 2, '2024-11-01 01:10:27', NULL, 'dois.png'),
-(3, 'Switch Gigabit TP-Link TL-SG105', 'Switch de rede gigabit com 5 portas', 150.00, 3, '2024-11-01 01:10:27', NULL, 'tres.png'),
-(4, 'Monitor Samsung 27\" Curved', 'Monitor de 27 polegadas com tela curva', 1200.00, 1, '2024-11-01 01:10:27', NULL, 'quatro.png'),
-(5, 'Teclado Mecânico Corsair K70 RGB', 'Teclado mecânico gamer com iluminação RGB', 800.00, 2, '2024-11-01 01:10:27', NULL, 'cinco.png'),
-(6, 'Fone de Ouvido Bluetooth JBL TUNE 500BT', 'Fone de ouvido bluetooth com som de alta qualidade', 200.00, 2, '2024-11-01 01:10:27', NULL, 'seis.png'),
-(7, 'HD Externo Seagate 1TB', 'HD externo portátil com 1TB de capacidade', 400.00, 4, '2024-11-01 01:10:27', NULL, 'sete.png'),
-(8, 'Placa de Vídeo NVIDIA GeForce RTX 3060', 'Placa de vídeo de alta performance para jogos', 3500.00, 1, '2024-11-01 01:10:27', NULL, 'oito.png'),
-(9, 'Roteador TP-Link Archer C6', 'Roteador wireless com suporte a dual-band', 300.00, 3, '2024-11-01 01:10:27', NULL, 'nove.png'),
-(10, 'SSD Kingston A400 480GB', 'SSD de alto desempenho com 480GB de capacidade', 350.00, 4, '2024-11-01 01:10:27', NULL, 'dez.png'),
-(11, 'Cabo HDMI 2.0 de 2 Metros', 'Cabo HDMI para transmissão de vídeo em alta resolução', 50.00, 5, '2024-11-01 01:10:27', NULL, 'onze.png'),
-(12, 'Hub USB-C com 4 Portas', 'Hub USB-C com quatro portas USB 3.0', 100.00, 5, '2024-11-01 01:10:27', NULL, 'doze.png'),
-(13, 'Carregador Universal para Notebook', 'Carregador universal para notebooks de diversas marcas', 150.00, 5, '2024-11-01 01:10:27', NULL, 'treze.png'),
-(14, 'Suporte para Notebook Ajustável', 'Suporte ajustável para notebooks', 80.00, 5, '2024-11-01 01:10:27', NULL, 'quatorze.png'),
-(15, 'Webcam Logitech HD C920', 'Webcam de alta definição para videoconferências', 300.00, 2, '2024-11-01 01:10:27', NULL, 'quinze.png'),
-(16, 'Headset Gamer HyperX Cloud Stinger', 'Headset gamer com som surround e microfone acoplado', 250.00, 2, '2024-11-01 01:10:27', NULL, 'dezesseis.png'),
-(17, 'Teclado Wireless Logitech K400', 'Teclado wireless com touchpad integrado', 200.00, 2, '2024-11-01 01:10:27', NULL, 'dezessete.png'),
-(18, 'Caixa de Som Bluetooth JBL GO 3', 'Caixa de som portátil com Bluetooth', 150.00, 2, '2024-11-01 01:10:27', NULL, 'dezoito.png'),
-(19, 'Impressora Multifuncional HP DeskJet 2776', 'Impressora multifuncional com Wi-Fi', 400.00, 1, '2024-11-01 01:10:27', NULL, 'dezenove.png'),
-(20, 'Apc Back-UPS BZ600-BR 600VA', 'No-break para proteção de equipamentos eletrônicos', 500.00, 1, '2024-11-01 01:10:27', NULL, 'vinte.png');
+INSERT INTO `produtos` (`nome`, `descricao`, `preco`, `estoque`, `imagem`) VALUES
+('Notebook Dell Inspiron 15', 'Notebook de alta performance para uso geral', 3500.00, 10, 'um.png'),
+('Mouse Gamer Logitech G502', 'Mouse gamer com alta precisão e customizável', 250.00, 15, 'dois.png'),
+('Switch Gigabit TP-Link TL-SG105', 'Switch de rede gigabit com 5 portas', 150.00, 20, 'tres.png'),
+('Monitor Samsung 27\" Curved', 'Monitor de 27 polegadas com tela curva', 1200.00, 5, 'quatro.png'),
+('Teclado Mecânico Corsair K70 RGB', 'Teclado mecânico gamer com iluminação RGB', 800.00, 12, 'cinco.png'),
+('Fone de Ouvido Bluetooth JBL TUNE 500BT', 'Fone de ouvido bluetooth com som de alta qualidade', 200.00, 25, 'seis.png'),
+('HD Externo Seagate 1TB', 'HD externo portátil com 1TB de capacidade', 400.00, 30, 'sete.png'),
+('Placa de Vídeo NVIDIA GeForce RTX 3060', 'Placa de vídeo de alta performance para jogos', 3500.00, 8, 'oito.png'),
+('Roteador TP-Link Archer C6', 'Roteador wireless com suporte a dual-band', 300.00, 50, 'nove.png'),
+('SSD Kingston A400 480GB', 'SSD de alto desempenho com 480GB de capacidade', 350.00, 40, 'dez.png'),
+('Cabo HDMI 2.0 de 2 Metros', 'Cabo HDMI para transmissão de vídeo em alta resolução', 50.00, 100, 'onze.png'),
+('Hub USB-C com 4 Portas', 'Hub USB-C com quatro portas USB 3.0', 100.00, 60, 'doze.png'),
+('Carregador Universal para Notebook', 'Carregador universal para notebooks de diversas marcas', 150.00, 35, 'treze.png'),
+('Suporte para Notebook Ajustável', 'Suporte ajustável para notebooks', 80.00, 80, 'quatorze.png'),
+('Webcam Logitech HD C920', 'Webcam de alta definição para videoconferências', 300.00, 22, 'quinze.png'),
+('Headset Gamer HyperX Cloud Stinger', 'Headset gamer com som surround e microfone acoplado', 250.00, 18, 'dezesseis.png'),
+('Teclado Wireless Logitech K400', 'Teclado wireless com touchpad integrado', 200.00, 45, 'dezessete.png'),
+('Caixa de Som Bluetooth JBL GO 3', 'Caixa de som portátil com Bluetooth', 150.00, 60, 'dezoito.png'),
+('Impressora Multifuncional HP DeskJet 2776', 'Impressora multifuncional com Wi-Fi', 400.00, 20, 'dezenove.png'),
+('Apc Back-UPS BZ600-BR 600VA', 'No-break para proteção de equipamentos eletrônicos', 500.00, 10, 'vinte.png');
+
 
 -- --------------------------------------------------------
 

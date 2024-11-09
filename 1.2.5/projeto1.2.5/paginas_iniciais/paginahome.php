@@ -260,11 +260,8 @@ include ('../conexao/conexao.php');
 
     <div class="sidebar" id="sidebarMenu">
         <ul>
-            <li><a href="../paginas_iniciais/loja.php">Loja</a></li>
-
-            <li><a href="../itens_loja/buscar.php">Buscar</a></li>
-
-            <li><a href="../itens_loja/carrinho.php">Carrinho de Compras</a></li>
+            <li><a href="../Loja/loja.php">Loja</a></li>
+            <li><a href="../loja/carrinho.php">Carrinho de Compras</a></li>
             <li><a href="../paginas_cadastros/Perfil.php">Perfil de Usuário</a></li>
             <li><a href="../paginas_cadastros/logout.php" class="logout">Sair</a></li>
         </ul>
@@ -275,10 +272,10 @@ include ('../conexao/conexao.php');
     <div class="titulo">
         <h1>Bem-vindo à Frog Tech</h1>
         <h3>Seu e-commerce de tecnologia</h3>
-        <a href="../paginas_iniciais/loja.php" class="shop-btn">Ir às Compras</a>
+        <a href="../loja/loja.php" class="shop-btn">Ir às Compras</a>
     </div>
 
-    <!-- Carrossel -->
+   <!--   
     <div class="carousel-container">
         <div class="carousel-track">
             <div class="card">
@@ -313,7 +310,7 @@ include ('../conexao/conexao.php');
             </div>
         </div>
 
-        <!-- Bolinhas de Navegação -->
+        
         <div class="nav-dots">
             <div class="nav-dot active" data-index="0"></div>
             <div class="nav-dot" data-index="1"></div>
@@ -321,6 +318,7 @@ include ('../conexao/conexao.php');
             <div class="nav-dot" data-index="3"></div>
         </div>
     </div>
+    -->
 
     <script>
         const menuIcon = document.getElementById('menuIcon');
