@@ -48,6 +48,8 @@ Acesse o projeto:
 
 Abra o navegador e vá até http://localhost/[nome_do_projeto] para visualizar o site.
 
+---
+
 ### **Comandos Git - Passo a Passo**
 
 1. Clonar o Repositório:
@@ -81,6 +83,8 @@ git push origin main
 git pull origin main
 (O que ele faz: Baixa e integra as últimas alterações feitas no repositório remoto para o seu repositório local.)
 
+---
+
 ### **Gerenciamento de Branches**
 
 7. Criar uma Nova Branch:
@@ -109,6 +113,8 @@ Para excluir uma branch local:
 git branch -d nome_da_branch
 (O que ele faz: Exclui a branch local especificada.)
 
+---
+
 ### **Desfazendo Alterações e Erros Comuns**
 
 11. Desfazer Mudanças em um Arquivo Modificado:
@@ -128,6 +134,8 @@ Se você quiser reverter um commit anterior, mas manter o histórico intacto:
 
 git revert <ID_DO_COMMIT>
 (O que ele faz: Cria um novo commit que reverte as alterações de um commit anterior.)
+
+---
 
 ### Próximos Passos
 
