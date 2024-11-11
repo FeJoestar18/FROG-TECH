@@ -1,7 +1,6 @@
 <?php
 session_start();
-$_SESSION = array(); // Limpar variáveis da sessão
-
+$_SESSION = array(); 
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
     setcookie(session_name(), '', time() - 42000,
@@ -9,7 +8,7 @@ if (ini_get("session.use_cookies")) {
     );
 }
 
-session_destroy(); // Destruir a sessão
-header("Location: ../paginas_iniciais/start.php"); // Redireciona para login
+session_destroy(); 
+header("Location: ../paginas_iniciais/start.php"); 
 exit();
 ?>

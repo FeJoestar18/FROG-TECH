@@ -1,8 +1,8 @@
 <?php
-// Inclui o arquivo de conexão
-include('../conexao/conexao.php');
 
-// Consulta SQL para buscar os dados dos usuários registrados
+include('../conexao/conexao2.php');
+
+
 $sql = "SELECT * FROM pessoa";
 $result = $conn->query($sql);
 ?>
@@ -13,9 +13,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuários Registrados</title>
-    <style>
-        
-    </style>
+    <link rel="stylesheet" href="../css/paginas_adm/usuarios_visualizar.css">
 </head>
 <body>
 
@@ -37,7 +35,7 @@ $result = $conn->query($sql);
     <tbody>
         <?php
         if ($result->num_rows > 0) {
-            // Exibe os dados de cada usuário
+           
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . $row['id'] . "</td>"; 
@@ -59,6 +57,6 @@ $result = $conn->query($sql);
 </html>
 
 <?php
-// Fecha a conexão com o banco de dados
+
 $conn->close();
 ?>

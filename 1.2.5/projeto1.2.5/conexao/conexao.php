@@ -1,7 +1,5 @@
 <?php
 
-
-
 $host = 'localhost';
 $dbname = 'frog';
 $user = 'root';

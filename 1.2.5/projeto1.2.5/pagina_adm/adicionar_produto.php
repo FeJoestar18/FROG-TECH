@@ -17,12 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         mkdir('../img', 0777, true);
     }
 
-    // Move o arquivo carregado para o diretório de destino
+   
     if (move_uploaded_file($imagem_temp, $destino_imagem)) {
-        // Insere o produto no banco de dados
+       
         $stmt = $pdo->prepare("INSERT INTO produtos (nome, descricao, preco, estoque, imagem) VALUES (?, ?, ?, ?, ?)");
         $stmt->execute([$nome, $descricao, $preco, $estoque, $imagem]);
-       /* echo "Produto adicionado com sucesso!";*/
+       
     } else {
         echo "Erro ao mover o arquivo de imagem.";
     }
@@ -34,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Adicionar Produto</title>
+    <link rel="stylesheet" href="../css/paginas_adm/adicionar_produto.css">
 </head>
 <body>
     <h1>Adicionar Produto</h1>

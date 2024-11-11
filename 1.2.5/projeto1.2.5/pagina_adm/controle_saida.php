@@ -19,11 +19,8 @@ $vendas = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>Controle de Saída de Produtos</title>
-    <style>
-        table { width: 100%; border-collapse: collapse; }
-        th, td { padding: 8px; text-align: left; border: 1px solid #ddd; }
-        th { background-color: #f2f2f2; }
-    </style>
+    <link rel="stylesheet" href="../css/paginas_adm/controle_saida.css">
+    
 </head>
 <body>
     <h1>Controle de Saída de Produtos</h1>

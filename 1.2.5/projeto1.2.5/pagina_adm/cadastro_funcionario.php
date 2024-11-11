@@ -1,10 +1,10 @@
 <?php
-// Inclui o arquivo de conexão com o banco de dados
+
 include('../conexao/conexao.php'); 
 
-// Verifica se o formulário foi enviado
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtém os dados do formulário
+    
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $tempo_contrato = $_POST['tempo_contrato'];
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $carteira_trabalho = $_POST['carteira_trabalho'];
     $turno = $_POST['turno'];
 
-    // Insere os dados no banco de dados
+    
     $sql = "INSERT INTO funcionarios (nome, email, tempo_contrato, unidade_tempo, endereco, idade, salario, cpf, rg, carteira_trabalho, turno)
             VALUES ('$nome', '$email', '$tempo_contrato', '$unidade_tempo', '$endereco', '$idade', '$salario', '$cpf', '$rg', '$carteira_trabalho', '$turno')";
 
@@ -35,72 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Funcionários</title>
-    <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            background-color: #f4f4f4; 
-            margin: 0; 
-            padding: 0; 
-        }
-        header { 
-            background-color: #fff; 
-            padding: 15px; 
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center; /* Centraliza o conteúdo do cabeçalho */
-            align-items: center;
-        }
-        .logo img {
-            max-width: 300px; /* Tamanho máximo ajustado */
-            max-height: 60px; /* Altura máxima opcional */
-            height: auto; /* Mantém a proporção da imagem */
-        }
-        footer { 
-            color: black; 
-            text-align: center; 
-            padding: 10px 0; 
-            position: relative; 
-            bottom: 0; 
-            width: 100%; 
-        }
-        .card { 
-            max-width: 600px; 
-            margin: 20px auto; 
-            padding: 20px; 
-            background-color: #fff; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
-        }
-        label { 
-            display: block; 
-            margin-top: 10px; 
-        }
-        input[type="text"], input[type="email"], input[type="number"], select { 
-            width: 90%;  
-            padding: 10px; 
-            margin-top: 5px; 
-            border: 1px solid #ccc; 
-            border-radius: 20px; 
-            max-width: 100%; 
-        }
-        button { 
-            margin-top: 20px; 
-            padding: 10px; 
-            background-color: #4CAF50; 
-            color: #fff; 
-            border: none; 
-            border-radius: 20px; 
-            cursor: pointer; 
-            width: 100%; 
-        }
-        button:hover { 
-            background-color: red; 
-            transition: background-color 0.8s ease;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/paginas_adm/cadastro_funcionario.css">
 </head>
 <body>
     <header>

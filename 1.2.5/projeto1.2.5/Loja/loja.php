@@ -13,6 +13,7 @@ $produtos = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>Loja Online</title>
+ <link rel="stylesheet" href="../css/loja/loja.css">
 </head>
 <body>
     <h1>Loja de Produtos Tech</h1>

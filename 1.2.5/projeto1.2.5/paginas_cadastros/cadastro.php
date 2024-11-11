@@ -1,7 +1,7 @@
 <?php
-session_start(); // Inicie a sessão no início
+session_start(); 
 
-include "../conexao/conexao.php"; // Incluindo o arquivo de conexão
+include "../conexao/conexao.php"; 
 
 if (isset($_SESSION['email'])) {
     header("Location: ../paginas_iniciais/paginahome.php");
@@ -15,16 +15,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $senha = $_POST['senha'];
         $CPF = $_POST['CPF'];
 
-        // Consulta de inserção
+       
         $sql1 = "INSERT INTO `pessoa` (`nome`, `email`, `senha`, `CPF`) 
                  VALUES (?, ?, ?, ?)";
         
-        // Prepare a consulta
-        if ($stmt = $conn->prepare($sql1)) {  // Usando $conn corretamente
-            // Bind os parâmetros
+     
+        if ($stmt = $conn->prepare($sql1)) {  
             $stmt->bind_param("ssss", $nome, $email, $senha, $CPF);
             
-            // Execute a consulta
             if ($stmt->execute()) {
                 $_SESSION['email'] = $email; // Armazena o email na sessão
                 header("Location: ../paginas_iniciais/paginahome.php");
@@ -33,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 mensagem("$nome não foi cadastrado! Erro: " . $stmt->error, 'danger');
             }
             
-            $stmt->close(); // Feche a declaração
+            $stmt->close();
         } else {
             mensagem("Erro na preparação da consulta: " . $conn->error, 'danger'); // Usando $conn
         }

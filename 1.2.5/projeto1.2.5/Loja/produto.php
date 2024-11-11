@@ -11,7 +11,7 @@ $stmt = $pdo->prepare("SELECT * FROM produtos WHERE id = ?");
 $stmt->execute([$id]);
 $produto = $stmt->fetch();
 
-// Verifica se o produto foi encontrado
+
 if (!$produto) {
     die("Produto não encontrado.");
 }
@@ -22,6 +22,7 @@ if (!$produto) {
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($produto['nome']) ?></title>
+    <link rel="stylesheet" href="../css/loja/produto.css">
 </head>
 <body>
     <h1><?= htmlspecialchars($produto['nome']) ?></h1>
