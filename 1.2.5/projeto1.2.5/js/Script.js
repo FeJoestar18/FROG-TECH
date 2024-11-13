@@ -13,3 +13,16 @@ overlay.addEventListener('click', () => {
     overlay.classList.remove('show');
 
 });
+
+window.onload = function() {
+    const modal = document.getElementById("modal");
+    if (modal) {
+        modal.style.display = "flex";
+    }
+}
+
+
+function voltarPagina() {
+    document.getElementById("modal").style.display = "none";
+    history.back();
+}

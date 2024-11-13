@@ -272,6 +272,6 @@ button[type="submit"]:hover {
     <footer>
         <p>&copy; 2023 Frog Tech. Todos os direitos reservados.</p>
     </footer>
-    <script src="../js/Nav-bar.js"></script>
+    <script src="../js/Script.js"></script>
 </body>
 </html>

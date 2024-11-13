@@ -63,12 +63,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Checkout</title>
+    <title>Checkout - Frog Tech</title>
+    <link rel="stylesheet" href="../css/checkout.css">
 </head>
 <body>
+<header>
+    <div class="logo">
+        <img src="../img/logo2.png" alt="Frog Tech Logo">
+    </div>
+
+</header>
+<br><br>
+
+
+
     <h1>Checkout</h1>
     <form method="POST">
         <button type="submit">Confirmar Compra</button>
     </form>
+    <script src="../js/Script.js"></script>
+    <footer>
+    <p>&copy; 2023 Frog Tech. Todos os direitos reservados.</p>
+</footer>
 </body>
 </html>

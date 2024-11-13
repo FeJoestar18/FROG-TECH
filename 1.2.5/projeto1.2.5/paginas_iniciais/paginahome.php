@@ -12,7 +12,7 @@ include ('../conexao/conexao.php');
     <title>Frog Tech - Home</title>
 
     
-    <link rel="stylesheet" href="../css/paginahome.css">
+    <link rel="stylesheet" href="../css/home_Style.css">
 </head>
 
 <body>
@@ -50,6 +50,6 @@ include ('../conexao/conexao.php');
         <p>&copy; 2023 Frog Tech. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="../js/Nav-bar.js"></script>
+    <script src="../js/Script.js"></script>
 </body>
 </html>

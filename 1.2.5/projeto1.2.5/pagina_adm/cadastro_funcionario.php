@@ -1,7 +1,9 @@
 <?php
+include('../conexao/conexao2.php'); 
 
-include('../conexao/conexao.php'); 
-
+// Recuperar os departamentos do banco de dados
+$departamentos_sql = "SELECT id, nome FROM departamentos";
+$departamentos_result = $conn->query($departamentos_sql);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
@@ -16,10 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $rg = $_POST['rg'];
     $carteira_trabalho = $_POST['carteira_trabalho'];
     $turno = $_POST['turno'];
+    $departamento_id = $_POST['departamento_id']; // Novo campo para o departamento
 
-    
-    $sql = "INSERT INTO funcionarios (nome, email, tempo_contrato, unidade_tempo, endereco, idade, salario, cpf, rg, carteira_trabalho, turno)
-            VALUES ('$nome', '$email', '$tempo_contrato', '$unidade_tempo', '$endereco', '$idade', '$salario', '$cpf', '$rg', '$carteira_trabalho', '$turno')";
+    // Inserção do novo funcionário, incluindo o departamento
+    $sql = "INSERT INTO funcionarios (nome, email, tempo_contrato, unidade_tempo, endereco, idade, salario, cpf, rg, carteira_trabalho, turno, departamento_id)
+            VALUES ('$nome', '$email', '$tempo_contrato', '$unidade_tempo', '$endereco', '$idade', '$salario', '$cpf', '$rg', '$carteira_trabalho', '$turno', '$departamento_id')";
 
     if ($conn->query($sql) === TRUE) {
         header("Location: funcionario.php");
@@ -35,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Funcionários</title>
-    <link rel="stylesheet" href="../css/paginas_adm/cadastro_funcionario.css">
+    <link rel="stylesheet" href="../css/cadastro_funcionario.css">
 </head>
 <body>
     <header>
@@ -84,6 +87,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <label for="carteira_trabalho">Carteira de Trabalho:</label>
             <input type="text" id="carteira_trabalho" name="carteira_trabalho" maxlength="12" required placeholder="000.00000.00" pattern="\d{3}\.\d{5}\.\d{2}" title="Formato: 000.00000.00">
+
+            <!-- Novo campo para selecionar o departamento -->
+            <label for="departamento_id">Departamento:</label>
+            <select id="departamento_id" name="departamento_id" required>
+                <option value="">Selecione um departamento</option>
+                <?php while ($departamento = $departamentos_result->fetch_assoc()): ?>
+                    <option value="<?php echo $departamento['id']; ?>"><?php echo $departamento['nome']; ?></option>
+                <?php endwhile; ?>
+            </select>
 
             <button type="submit">Cadastrar Funcionário</button>
         </form>

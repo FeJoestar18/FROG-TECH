@@ -1,0 +1,103 @@
+/* Reset Básico */
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    /* Body */
+    body {
+        background-color: #f9f9f9;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        min-height: 100vh;
+    }
+    
+    /* Título */
+    h1 {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    /* Tabela */
+    table {
+        width: 100%;
+        max-width: 800px;
+        border-collapse: collapse;
+        background-color: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    table thead {
+        background-color: #007bff;
+        color: #fff;
+    }
+    
+    table th, table td {
+        padding: 15px;
+        text-align: left;
+        font-size: 1rem;
+    }
+    
+    table th {
+        font-weight: bold;
+    }
+    
+    table tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    table tbody tr:hover {
+        background-color: #e9e9e9;
+    }
+    
+    table tbody td {
+        color: #333;
+    }
+    
+    /* Estilo para os valores em moeda */
+    table tbody td:last-child {
+        font-weight: bold;
+        color: #28a745;
+    }
+    
+    /* Responsividade */
+    @media (max-width: 600px) {
+        table, table thead, table tbody, table th, table td, table tr {
+            display: block;
+            width: 100%;
+        }
+        
+        table thead {
+            display: none;
+        }
+        
+        table tbody tr {
+            margin-bottom: 15px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        
+        table tbody td {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+        }
+        
+        table tbody td::before {
+            content: attr(data-label);
+            font-weight: bold;
+            color: #007bff;
+        }
+    }
+    

@@ -1,0 +1,88 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 100px; /* Compensa o header fixo */
+    padding-bottom: 80px; /* Compensa o footer fixo */
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo */
+    align-items: center;
+}
+
+.logo img {
+    width: 350px; /* Aumenta o tamanho da logo */
+    height: auto;
+}
+
+/* Conteúdo Principal */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Botão de Navegação */
+form button[type="submit"] {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+footer {
+    position: fixed;
+   
+    color: black;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 1rem;
+}

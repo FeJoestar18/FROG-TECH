@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frog Tech - Alterar Informações</title>
-    <link rel="stylesheet" href="../css/paginas_cadastro/alterar_informacoes.css">
+    <link rel="stylesheet" href="../css/Alterar_INFO.css">
 </head>
 <body>
 
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <li><a href="../paginas_iniciais/paginahome.php">Home</a></li>
             <li><a href="../paginas_iniciais/loja.php">Loja</a></li>
             <li><a href="../paginas_cadastros/perfil.php">Perfil de Usuário</a></li>
-            <li><a href="../paginas_cadastros/logout.php" class="logout">Sair</a></li>>
+            <li><a href="../paginas_cadastros/logout.php" class="logout">Sair</a></li>
     </ul>
 </div>
 
@@ -98,16 +98,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h2>Altere suas informações pessoais</h2>
         <form method="POST" action="">
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" value="<?php echo htmlspecialchars($nome); ?>" required>
+            <input type="text" name="nome" value="<?php  ?>" required>
             <br>
             <label for="email">Novo Email:</label>
-            <input type="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
+            <input type="email" name="email" value="<?php  ?>" required>
             <br>
             <label for="cpf">Novo CPF:</label>
-            <input type="text" name="cpf" value="<?php echo htmlspecialchars($cpf); ?>" required>
+            <input type="text" name="cpf" value="<?php  ?>" required>
             <br>
             <label for="senha">Nova Senha:</label>
-            <input type="text" name="senha" required> <!-- Mantido como tipo 'text' -->
+            <input type="text" name="senha" required> 
             <br>
             <button type="submit">Salvar Alterações</button>
         </form>
@@ -118,21 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <p>© 2024 Frog Tech - Todos os direitos reservados</p>
 </footer>
 
-<script>
-    const menuIcon = document.getElementById('menuIcon');
-    const sidebarMenu = document.getElementById('sidebarMenu');
-    const overlay = document.getElementById('overlay');
-
-    menuIcon.addEventListener('click', () => {
-        sidebarMenu.classList.toggle('open');
-        overlay.classList.toggle('show');
-    });
-
-    overlay.addEventListener('click', () => {
-        sidebarMenu.classList.remove('open');
-        overlay.classList.remove('show');
-    });
-</script>
+<script src="../js/Script.js"></script>
 
 </body>
 </html>

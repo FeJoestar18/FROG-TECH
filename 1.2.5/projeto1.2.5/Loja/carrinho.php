@@ -16,11 +16,35 @@ $carrinho = $_SESSION['carrinho'] ?? [];
 <head>
     <meta charset="UTF-8">
     <title>Carrinho</title>
-    <link rel="stylesheet" href="../css/loja/carrinho.css">
+    <link rel="stylesheet" href="../css/Carrinho.css">
 </head>
 <body>
+
+<header>
+        <div class="logo">
+            <img src="../img/logo2.png" alt="Frog Tech Logo">
+        </div>
+        <div class="menu-icon" id="menuIcon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+  <br>
+   <div class="sidebar" id="sidebarMenu">
+        <ul>
+            <li><a href="../paginas_iniciais/paginahome.php">Home</a></li>
+            <li><a href="../loja/loja.php">Loja</a></li>
+            <li><a href="../paginas_cadastros/Perfil.php">Perfil de Usuário</a></li>
+            <li><a href="../paginas_cadastros/logout.php" class="logout">Sair</a></li>
+        </ul>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
     <h1>Carrinho de Compras</h1>
-    
+    <br>
     <?php if (empty($carrinho)): ?>
         
         <div class="modal" id="modal">
@@ -44,20 +68,8 @@ $carrinho = $_SESSION['carrinho'] ?? [];
         <a href="checkout.php">Finalizar Compra</a>
     <?php endif; ?>
 
-    <script>
-       
-        window.onload = function() {
-            const modal = document.getElementById("modal");
-            if (modal) {
-                modal.style.display = "flex";
-            }
-        }
-
-      
-        function voltarPagina() {
-            document.getElementById("modal").style.display = "none";
-            history.back();
-        }
-    </script>
+    <script src="../js/Script.js"></script>
+   
+    
 </body>
 </html>

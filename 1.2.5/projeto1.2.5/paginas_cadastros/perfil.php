@@ -16,6 +16,7 @@ $stmt = $mysqli->prepare($query);
 
 if ($stmt === false) {
     die("Erro na preparação da consulta: " . $mysqli->error); 
+}
 
 $stmt->bind_param("s", $email); 
 $stmt->execute();
@@ -38,7 +39,7 @@ if ($result->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuário - Frog Tech</title>
-    <link rel="stylesheet" href="../css/paginas_cadastro/perfil.css">
+  <link rel="stylesheet" href="../css/Style_usuario.css">
 </head>
 <body>
 
@@ -59,7 +60,7 @@ if ($result->num_rows > 0) {
     <ul>
     <li><a href="../paginas_iniciais/paginahome.php">Home</a></li>
             <li><a href="../paginas_iniciais/loja.php">Loja</a></li>
-            <li><a href="../Itens_loja/carrinho.php">Carrinho de Compras</a></li>
+            <li><a href="../Loja/carrinho.php">Carrinho de Compras</a></li>
             <li><a href="../paginas_cadastros/logout.php" class="logout">Sair</a></li>
     </ul>
 </div>
@@ -70,8 +71,8 @@ if ($result->num_rows > 0) {
    
     <div class="profile-header">
         
-        <h2><?php echo htmlspecialchars($nome); ?></h2>
-        <p><?php echo htmlspecialchars($email); ?></p>
+        <h2>Perfil de Usuário</h2>
+        <p>Seus dados pessoais</p>
     </div>
 
     <!-- Detalhes do Perfil -->
@@ -91,21 +92,7 @@ if ($result->num_rows > 0) {
     <p>&copy; 2024 Frog Tech. Todos os direitos reservados.</p>
 </footer>
 
-<script>
-    const menuIcon = document.getElementById('menuIcon');
-    const sidebar = document.getElementById('sidebarMenu');
-    const overlay = document.getElementById('overlay');
-
-    menuIcon.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
-        overlay.classList.toggle('show');
-    });
-
-    overlay.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('show');
-    });
-</script>
+<script src="../js/Script.js"></script>
 
 </body>
 </html>

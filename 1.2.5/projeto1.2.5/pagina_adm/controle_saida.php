@@ -19,7 +19,7 @@ $vendas = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>Controle de Saída de Produtos</title>
-    <link rel="stylesheet" href="../css/paginas_adm/controle_saida.css">
+    <link rel="stylesheet" href="../css/controle_said.css">
     
 </head>
 <body>

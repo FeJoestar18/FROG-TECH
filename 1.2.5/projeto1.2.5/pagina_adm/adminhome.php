@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Administração</title>
-    <link rel="stylesheet" href="../css/paginas_adm/adminhome.css">
+    <link rel="stylesheet" href="../css/adminhome.css">
     
 </head>
 <body>
@@ -13,6 +13,8 @@
         <a href="../paginas_iniciais/paginahome.php">PAGINA HOME</a>
         <a href="../pagina_adm/funcionario.php">FUNCIONÁRIOS</a>
         <a href = "../pagina_adm/usuarios_visualizar.php">USUARIOS</a>
+        <a href="../pagina_adm/criar_departamentos.php">CRIAR DEPARTAMENTOS</a>
+       
         <a href="../paginas_cadastros/logout.php">SAIR</a>
        
     </div>
@@ -40,7 +42,7 @@
                 <div class="card spaced-card">
                     <h3>Gerenciamento de departamentos</h3>
                     <p>Departamentos Frog Tech</p>
-                    <span class="acessar" onclick="location.href='departamento.php'">Acessar</span>
+                    <span class="acessar" onclick="location.href='gerenciar_departamentos.php'">Acessar</span>
                 </div>
                 <div class="card">
                     <h3>Adicionar Produtos</h3>
