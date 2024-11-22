@@ -1,0 +1,164 @@
+/* Estilos gerais para o body */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: white;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    color: white;
+    text-align: center;
+    padding: 1em;
+    z-index: 1;
+}
+
+/* Estilos da logo */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 270px;
+    margin-right: auto;
+    height: 60px;
+}
+
+.logo img {
+    max-height: 180%;
+    height: auto;
+    width: auto;
+    margin-top: -20px;
+}
+
+/* Estilos para o container principal */
+.container {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    margin-top: 1em;
+    padding: 2em 1em 1em; /* Espaçamento em cima e nos lados */
+}
+
+/* Estilos da sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #2e7d32;
+    padding: 1em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 2;
+    color: white;
+    margin-left: -4px;
+}
+
+.sidebar img {
+    max-width: 100%;
+    height: auto;
+    width: 80px;
+    margin-bottom: 1em;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+h1 {
+    margin-left: 720px;
+    color: #000000;
+}
+/* Estilos para o footer */
+footer {
+    text-align: right;
+    padding: 1em;
+    background-color: white;
+    position: relative;
+    bottom: 0;
+    width: 70%;
+    color: black;
+    margin-top: auto; /* Isso empurra o footer para baixo */
+}
+
+/* Estilos para o formulário de criar departamento */
+form {
+    background-color: #f9f9f9;
+    padding: 2em;
+    margin-left: 350px; /* Para evitar sobreposição com a sidebar */
+    margin-top: 2em;
+    border-radius: 8px;
+    width: 70%; /* Aumentando a largura do formulário */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #555;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form button {
+    background-color: #2e7d32;
+    color: white;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* margin-left: 430px; */
+}
+
+form button:hover {
+    background-color: #1e5d23;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: relative;
+        margin-left: 0;
+    }
+
+    form {
+        width: 90%;
+        margin-left: 0;
+    }
+}

@@ -20,8 +20,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Criar Departamento</title>
+    <link rel="stylesheet" href="../css/cria_departamentos.css">
 </head>
 <body>
+<div class="sidebar">
+        <img src="../img/logo1.png" alt="Logo">
+        <a href="../pagina_adm/funcionario.php">FUNCIONÁRIOS</a>
+        <a href="../paginas_iniciais/paginahome.php">PAGINA-HOME</a>
+        <a href = "../pagina_adm/usuarios_visualizar.php">USUARIOS</a>
+        <a href="../paginas_cadastros/logout.php">SAIR</a>
+       
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="../img/logo2.png" alt="Frog Tech Logo">
+        </div>
+
+    </header>
     <h1>Criar Novo Departamento</h1>
     <form method="POST">
         <label for="nome">Nome do Departamento:</label>
@@ -32,5 +48,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <button type="submit">Criar Departamento</button>
     </form>
+
+    <footer>
+        <p>&copy; 2024 Loja Frog Tech. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>

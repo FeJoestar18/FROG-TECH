@@ -13,13 +13,24 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuários Registrados</title>
-    <link rel="stylesheet" href="../css/usuarios_visualizar.css">
+    <link rel="stylesheet" href="../css/Style_usuarios.css">
 </head>
 <body>
 
-<header>
-    
-</header>
+<div class="sidebar">
+        <img src="../img/logo1.png" alt="Logo">
+        <a href="../pagina_adm/funcionario.php">FUNCIONÁRIOS</a>
+        <a href="../paginas_iniciais/paginahome.php">PAGINA-HOME</a>
+        <a href = "../pagina_adm/usuarios_visualizar.php">USUARIOS</a>
+        <a href="../paginas_cadastros/logout.php">SAIR</a>
+       
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="../img/logo2.png" alt="Frog Tech Logo">
+        </div>
+    </header>
 
 <table>
     <thead>
@@ -52,7 +63,9 @@ $result = $conn->query($sql);
         ?>
     </tbody>
 </table>
-
+<footer>
+        <p>&copy; 2024 Loja Frog Tech. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
 
