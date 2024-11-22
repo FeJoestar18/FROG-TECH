@@ -1,0 +1,131 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo */
+    align-items: center;
+}
+
+.logo img {
+    width: 350px; /* Aumenta o tamanho da logo */
+    height: auto;
+}
+
+/* Conteúdo Principal */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-top: 100px; /* Adiciona um espaçamento para compensar o header fixo */
+    margin-bottom: 20px;
+}
+
+/* Estilo para as Informações de Checkout */
+.checkout-info {
+    max-width: 500px;
+    width: 80%;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; /* Espaço inferior */
+    text-align: center; /* Alinha o texto à esquerda */
+    
+}
+
+.checkout-info p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.checkout-info strong {
+    color: #28a745; /* Cor verde para os rótulos */
+}
+
+
+form {
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+form button[type="submit"] {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+form button[type="submit"]:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    color: black;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    z-index: 1000;
+    bottom: 0;
+}
+
+/* Estilo do botão dentro do link */
+a {
+    text-decoration: none; /* Remove a linha do link */
+}
+
+button {
+    padding: 12px 25px; /* Espaçamento interno */
+    font-size: 1.2rem; /* Tamanho da fonte */
+    background-color: #28a745; /* Cor de fundo verde */
+    color: #fff; /* Cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Aponta o cursor quando passa sobre o botão */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efeitos de transição */
+    text-align: center; /* Centraliza o texto */
+}
+
+button:hover {
+    background-color: #218838; /* Cor de fundo quando o botão é clicado */
+    transform: scale(1.05); /* Leve aumento de tamanho ao passar o mouse */
+}
+
+button:focus {
+    outline: none; /* Remove o contorno quando o botão é focado */
+}

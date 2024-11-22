@@ -1,0 +1,107 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Impede a rolagem horizontal */
+}
+
+header {
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    color: white;
+    text-align: center;
+    padding: 1em;
+    z-index: 1;
+}
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 270px; /* Remover margem à esquerda */
+    margin-right: auto; /* Cria margem à direita automática */
+    height: 60px; /* Ajuste a altura da div da logo */
+}
+.logo img {
+max-height: 180%; /* Ajuste a altura máxima da imagem */
+height: auto; /* Mantém a proporção da imagem */
+width: auto; /* Mantém a proporção da imagem */
+margin-top: -20px; /* Ajuste o valor conforme necessário */
+}
+
+
+.container {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start; /* Alinhamento inicial à esquerda */
+    margin-top: 1em; /* Para dar espaço entre o header e o conteúdo */
+}
+.sidebar {
+width: 250px;
+background-color: #2e7d32;
+padding: 1em;
+position: fixed;
+top: 0;
+left: 0;
+height: 100%;
+z-index: 2;
+color: white;
+margin-left: -4px; /* Ajuste este valor conforme necessário para mover a sidebar inteira para a esquerda */
+}
+
+
+.sidebar img {
+max-width: 100%; /* Ajusta para que a imagem não ultrapasse a largura da sidebar */
+height: auto; /* Mantém a proporção da imagem */
+width: 80px; /* Ajuste a largura conforme necessário */
+margin-bottom: 1em; /* Espaçamento abaixo da imagem, se necessário */
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+.sidebar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+footer {
+    text-align: right; /* Alinha o texto à direita */
+    padding: 1em;
+    background-color: white;
+    position: relative;
+    bottom: 0;
+    width: 70%;
+    color: black;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%; /* Diminui a largura da tabela para 80% */
+    margin-top: 20px;
+    margin-left: 290px; /* Adiciona uma margem à esquerda para alinhar a tabela */
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 5px; /* Diminui o padding para 5px */
+    text-align: left;
+    font-size: 14px; /* Diminui o tamanho da fonte para 14px */
+  }
+  
+  th {
+    background-color: #f0f0f0;
+    font-size: 14px; /* Diminui o tamanho da fonte para 14px */
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 10px; /* Diminui a margem inferior para 10px */
+    font-size: 18px; /* Diminui o tamanho da fonte para 18px */
+    margin-left: 300px
+  }
