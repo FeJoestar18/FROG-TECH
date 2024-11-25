@@ -139,7 +139,6 @@ git revert <ID_DO_COMMIT>
 
 ### Próximos Passos
 
-.Estilizar o site.
 .Corrigir bugs que surgirem com o tempo.
 .Adicionar novos recursos conforme feedback dos usuários.
 
