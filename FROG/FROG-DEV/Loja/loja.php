@@ -223,6 +223,8 @@ button[type="submit"]:hover {
 }
 
 
+
+
     </style>
 </head>
 <body>
@@ -231,10 +233,13 @@ button[type="submit"]:hover {
         <div class="logo">
             <img src="../img/logo2.png" alt="Frog Tech Logo">
         </div>
+       
+        </div>
         <div class="menu-icon" id="menuIcon">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
+            
         </div>
     </header>
 

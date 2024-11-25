@@ -94,7 +94,7 @@ $conn->close();
         <input type="tel" id="telefone" name="telefone" required><br><br>
 
         <label for="cep">CEP:</label><br>
-        <input type="text" id="cep" name="cep" maxlength="8" required onblur="buscarCEP()"><br>
+        <input type="text" id="cep" name="cep" maxlength="8"  required onblur="buscarCEP()"><br>
 
         <label for="endereco">Endereço:</label><br>
         <input type="text" id="endereco" name="endereco" required><br>

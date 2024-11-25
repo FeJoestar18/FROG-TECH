@@ -14,8 +14,8 @@
                         }
                     })
                     .catch(err => console.error("Erro ao buscar CEP:", err));
-            } else {
-                alert("Digite um CEP válido (8 dígitos).");
-            }
+              }  // else {
+            // //     alert("Digite um CEP válido (8 dígitos).");
+            // // }
         }
   

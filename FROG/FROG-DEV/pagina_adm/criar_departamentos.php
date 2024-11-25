@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 <div class="sidebar">
         <img src="../img/logo1.png" alt="Logo">
+        <a onclick="window.history.back();">VOLTAR</a>
         <a href="../pagina_adm/funcionario.php">FUNCIONÁRIOS</a>
         <a href="../paginas_iniciais/paginahome.php">PAGINA-HOME</a>
         <a href = "../pagina_adm/usuarios_visualizar.php">USUARIOS</a>

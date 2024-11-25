@@ -13,15 +13,16 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuários Registrados</title>
-    <link rel="stylesheet" href="../css/Style_usuarios.css">
+    <link rel="stylesheet" href="../css/estilo_usuarios.css">
 </head>
 <body>
 
 <div class="sidebar">
         <img src="../img/logo1.png" alt="Logo">
+        <a onclick="window.history.back();">VOLTAR</a>
         <a href="../pagina_adm/funcionario.php">FUNCIONÁRIOS</a>
         <a href="../paginas_iniciais/paginahome.php">PAGINA-HOME</a>
-        <a href = "../pagina_adm/usuarios_visualizar.php">USUARIOS</a>
+        <a href="../pagina_adm/adminhome.php">ADMIN-HOME</a>
         <a href="../paginas_cadastros/logout.php">SAIR</a>
        
     </div>
@@ -31,7 +32,7 @@ $result = $conn->query($sql);
             <img src="../img/logo2.png" alt="Frog Tech Logo">
         </div>
     </header>
-
+<br><br>
 <table>
     <thead>
         <tr>

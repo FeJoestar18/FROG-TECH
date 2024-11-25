@@ -34,9 +34,10 @@
             <div class="input-container">
                 <input type="password" placeholder="Senha" name="senha" required pattern="(?=.*\d)(?=.*[@]).{8,}" title="A senha deve ter pelo menos 8 caracteres, incluir um número e um símbolo @.">
             </div>
-            <div class="input-container"> 
-                <input type="text" placeholder="CPF" name="CPF" required maxlength="11" pattern="\d{11}">
-            </div>
+            <div class="input-container">
+                <input type="text" placeholder="CPF" name="CPF" required maxlength="14" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+                </div>
+
 
             <button type="submit">Registrar</button>
         </form>
