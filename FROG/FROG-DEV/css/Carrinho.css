@@ -123,15 +123,15 @@ footer {
     font-size: 1rem;
 }
 
-/* Centralização do título */
+
 h1 {
     color: #2d2d2d;
     font-size: 2.5em;
-    margin-top: 80px; /* Adiciona o espaço para o título não ficar colado na parte superior */
+    margin-top: 80px; 
     text-align: center;
 }
 
-/* Centraliza o conteúdo do carrinho */
+
 .carrinho-item {
     display: flex;
     align-items: center;
@@ -146,7 +146,7 @@ h1 {
     text-align: center;
 }
 
-/* Centraliza o botão "Finalizar Compra" */
+
 a[href="checkout.php"] {
     display: inline-block;
     padding: 12px 24px;
@@ -164,9 +164,9 @@ a[href="checkout.php"]:hover {
     background-color: #45a049;
 }
 
-/* Estilos para o modal (pop-up) */
+
 .modal {
-    display: none; /* Inicialmente escondido */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;

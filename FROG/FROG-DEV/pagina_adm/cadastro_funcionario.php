@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="carteira_trabalho">Carteira de Trabalho:</label>
             <input type="text" id="carteira_trabalho" name="carteira_trabalho" maxlength="12" required placeholder="000.00000.00" pattern="\d{3}\.\d{5}\.\d{2}" title="Formato: 000.00000.00">
 
-            <!-- Novo campo para selecionar o departamento -->
+           
             <label for="departamento_id">Departamento:</label>
             <select id="departamento_id" name="departamento_id" required>
                 <option value="">Selecione um departamento</option>

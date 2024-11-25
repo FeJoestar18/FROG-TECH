@@ -1,6 +1,5 @@
 <?php
-include('../conexao/conexao.php');  // Altere o caminho de conexão conforme necessário
-
+include('../conexao/conexao.php');  
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
     $descricao = $_POST['descricao'];

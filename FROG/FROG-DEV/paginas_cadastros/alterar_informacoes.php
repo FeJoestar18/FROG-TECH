@@ -8,7 +8,7 @@ if (!isset($_SESSION['email'])) {
 }
 
 
-include('../conexao/teste_conexao.php'); // Inclua o arquivo de conexão
+include('../conexao/teste_conexao.php'); 
 
 
 $email = $_SESSION['email'];

@@ -1,19 +1,19 @@
 <?php
-session_start(); // Inicia a sessão
+session_start(); 
 
-// Verifica se o usuário está logado
+
 if (!isset($_SESSION['email'])) {
-    // Redireciona para a página de login se não estiver logado
+   
     header('Location: login.php');
     exit();
 }
 
 include('../conexao/conexao2.php');
 
-// Obtém o email do usuário logado da sessão
+
 $email = $_SESSION['email'];
 
-// Processa o formulário
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $telefone = $_POST['telefone'];
     $cep = $_POST['cep'];
@@ -22,28 +22,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pais = $_POST['pais'];
     $ponto_referencia = $_POST['ponto_referencia'];
 
-    // Prepara a consulta para atualizar os dados do usuário
+    
     $sql = "UPDATE pessoa 
             SET telefone = ?, cep = ?, endereco = ?, cidade = ?, pais = ?, ponto_referencia = ? 
-            WHERE email = ?"; // A cláusula WHERE agora usa o email da sessão
+            WHERE email = ?"; 
     
     $stmt = $conn->prepare($sql);
 
     if ($stmt) {
-        // Passa os 7 parâmetros para o bind_param
+        
         $stmt->bind_param("sssssss", $telefone, $cep, $endereco, $cidade, $pais, $ponto_referencia, $email);
 
         // Executa a consulta
         if ($stmt->execute()) {
             echo "Informações atualizadas com sucesso!";
-            // Adiciona o cabeçalho de redirecionamento aqui
+            
             header('Location: perfil.php');
             exit();
         } else {
             echo "Erro ao atualizar informações: " . $stmt->error;
         }
 
-        // Fechando o statement
+        
         $stmt->close();
     } else {
         echo "Erro na preparação da consulta: " . $conn->error;

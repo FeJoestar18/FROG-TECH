@@ -48,7 +48,7 @@ header {
 }
 
 .titulo {
-margin-top: 65px; /* Reduzindo o espaçamento superior */
+margin-top: 65px; 
 text-align: center;
 padding: 20px;
 padding-bottom: 0px;
@@ -159,7 +159,7 @@ footer {
     font-size: 1rem;
 }
 
-/* Estilos para o formulário */
+
 form {
     margin: 50px auto;
     max-width: 600px;
@@ -215,14 +215,14 @@ form input:focus {
     outline: none;
 }
 
-/* Estilo para as mensagens de erro ou sucesso */
+
 .message {
     font-size: 1.1rem;
     color: #4CAF50;
     margin-top: 20px;
 }
 
-/* Responsividade */
+
 @media (max-width: 768px) {
     form {
         width: 90%;

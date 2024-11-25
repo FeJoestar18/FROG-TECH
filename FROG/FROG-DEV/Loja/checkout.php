@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <br>
 </div>
 
-<!-- Botão para redirecionar para a página add_checkout.php -->
+
 <form action="../paginas_cadastros/add_checkout.php" method="get">
     <button type="submit">Alterar Dados de Endereço</button>
     <br><br>

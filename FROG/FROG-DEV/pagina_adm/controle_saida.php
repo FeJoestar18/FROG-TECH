@@ -1,7 +1,6 @@
 <?php
-require_once '../conexao/conexao.php'; // Garante que o arquivo de conexão seja incluído
+require_once '../conexao/conexao.php'; 
 
-// Consulta para obter informações de vendas, incluindo o valor da compra
 $stmt = $pdo->query("SELECT 
                         v.id, 
                         p.nome AS produto_nome, 

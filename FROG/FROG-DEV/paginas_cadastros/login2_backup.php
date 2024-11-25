@@ -56,7 +56,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             <input type="email" placeholder="Email" name="email" required>
             <div class="password-container">
                 <input type="password" placeholder="Senha" name="password" id="password" required>
-                <span id="togglePassword">🐸</span> <!-- Sapo como ícone -->
+                <span id="togglePassword">🐸</span> 
             </div>
             <button type="submit">Entrar</button>
             <p>Não possui conta? <a href="regis.php">Registrar</a></p>
@@ -74,7 +74,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         togglePassword.addEventListener('click', () => {
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
-            togglePassword.textContent = type === 'password' ? '🐸' : '👀'; // Sapo ou olho aberto
+            togglePassword.textContent = type === 'password' ? '🐸' : '👀'; 
         });
     </script>
 </body>

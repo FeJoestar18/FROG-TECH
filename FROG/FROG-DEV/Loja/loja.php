@@ -13,7 +13,7 @@ $produtos = $stmt->fetchAll();
     <meta charset="UTF-8">
     <title>Loja - Frog Tech</title>
    <style> 
-/* Estilos Globais */
+
 * {
     margin: 0;
     padding: 0;
@@ -27,7 +27,7 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
+ Header 
 header {
     background-color: #fff;
     padding: 15px;
@@ -46,7 +46,7 @@ header {
     height: auto;
 }
 
-/* Menu Icon */
+
 .menu-icon {
     display: flex;
     flex-direction: column;
@@ -65,7 +65,7 @@ header {
     transition: 0.3s;
 }
 
-/* Sidebar */
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -108,7 +108,7 @@ header {
     color: #ff0000;
 }
 
-/* Overlay */
+
 .overlay {
     position: fixed;
     top: 0;
@@ -124,7 +124,7 @@ header {
     display: block;
 }
 
-/* Footer */
+
 footer {
     background-color: white;
     color: black;
@@ -139,7 +139,7 @@ footer {
     font-size: 1rem;
 }
 
-/* Produtos */
+
 .produtos {
     display: flex;
     flex-wrap: wrap;
@@ -166,7 +166,7 @@ footer {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Botão de Produto */
+
 .produto a {
     display: inline-block;
     color: #4CAF50;
@@ -183,7 +183,7 @@ footer {
     color: white;
 }
 
-/* Título e Formulário de Busca */
+ 
 h1 {
     font-size: 2.5em;
     color: #2d2d2d;

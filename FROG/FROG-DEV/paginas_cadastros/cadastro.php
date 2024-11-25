@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $stmt->bind_param("ssss", $nome, $email, $senha, $CPF);
             
             if ($stmt->execute()) {
-                $_SESSION['email'] = $email; // Armazena o email na sessão
+                $_SESSION['email'] = $email; 
                 header("Location: ../paginas_iniciais/paginahome.php");
                 exit();
             } else {
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
             $stmt->close();
         } else {
-            mensagem("Erro na preparação da consulta: " . $conn->error, 'danger'); // Usando $conn
+            mensagem("Erro na preparação da consulta: " . $conn->error, 'danger'); 
         }
     } else {
         echo "Por favor, preencha todos os campos.";

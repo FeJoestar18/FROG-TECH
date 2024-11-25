@@ -1,7 +1,7 @@
 <?php
 include '../conexao/conexao.php';
 
-// Verifica se o parâmetro 'id' foi fornecido na URL
+
 if (!isset($_GET['id'])) {
     die("ID do produto não especificado.");
 }

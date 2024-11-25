@@ -4,7 +4,7 @@ body {
     flex-direction: column;
     margin: 0;
     font-family: Arial, sans-serif;
-    overflow-x: hidden; /* Impede a rolagem horizontal */
+    overflow-x: hidden; 
 }
 
 header {
@@ -19,23 +19,23 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 270px; /* Remover margem à esquerda */
-    margin-right: auto; /* Cria margem à direita automática */
-    height: 60px; /* Ajuste a altura da div da logo */
+    margin-left: 270px; 
+    margin-right: auto; 
+    height: 60px; 
 }
 .logo img {
-max-height: 180%; /* Ajuste a altura máxima da imagem */
-height: auto; /* Mantém a proporção da imagem */
-width: auto; /* Mantém a proporção da imagem */
-margin-top: -20px; /* Ajuste o valor conforme necessário */
+max-height: 180%; 
+height: auto; 
+width: auto;
+margin-top: -20px; 
 }
 
 
 .container {
     display: flex;
     flex: 1;
-    justify-content: flex-start; /* Alinhamento inicial à esquerda */
-    margin-top: 1em; /* Para dar espaço entre o header e o conteúdo */
+    justify-content: flex-start; 
+    margin-top: 1em; 
 }
 .sidebar {
 width: 250px;
@@ -47,15 +47,15 @@ left: 0;
 height: 100%;
 z-index: 2;
 color: white;
-margin-left: -4px; /* Ajuste este valor conforme necessário para mover a sidebar inteira para a esquerda */
+margin-left: -4px;
 }
 
 
 .sidebar img {
-max-width: 100%; /* Ajusta para que a imagem não ultrapasse a largura da sidebar */
-height: auto; /* Mantém a proporção da imagem */
-width: 80px; /* Ajuste a largura conforme necessário */
-margin-bottom: 1em; /* Espaçamento abaixo da imagem, se necessário */
+max-width: 100%; 
+height: auto;
+width: 80px;
+margin-bottom: 1em; 
 }
 
 .sidebar a {
@@ -71,7 +71,7 @@ margin-bottom: 1em; /* Espaçamento abaixo da imagem, se necessário */
 
 
 footer {
-    text-align: right; /* Alinha o texto à direita */
+    text-align: right;
     padding: 1em;
     background-color: white;
     position: relative;
@@ -81,7 +81,7 @@ footer {
 }
 
 .spaced-card {
-    margin-left: 40px; /* Afastar o card da barra lateral */
+    margin-left: 40px; 
 }
 
 .card {
@@ -92,7 +92,7 @@ footer {
     margin: 2em auto;
     width: calc(100% - 300px);
     max-width: 800px;
-    margin-left: 460px; /* Aumente este valor para mover o card mais para a direita */
+    margin-left: 460px; 
 }
 
 .card label {
