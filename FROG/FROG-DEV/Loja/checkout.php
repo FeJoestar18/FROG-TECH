@@ -104,9 +104,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </a>
 </form>
 
-<!-- Botão para redirecionar para a página pagamento.php -->
-
-
 <script src="../js/Script.js"></script>
 
 <footer>
