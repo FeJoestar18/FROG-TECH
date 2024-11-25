@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO departamentos (nome, descricao) VALUES ('$nome', '$descricao')";
     
     if ($pdo->query($sql)) {
-        echo "<script>alert('Departamento criado com sucesso!'); window.location.href='gerenciar_departamentos.php';</script>";
+        echo "<script>alert('Departamento criado com sucesso!'); window.location.href='adminhome.php';</script>";
     } else {
         echo "<script>alert('Erro ao criar departamento.');</script>";
     }
