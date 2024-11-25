@@ -27,7 +27,6 @@ body {
     line-height: 1.6;
 }
 
- Header 
 header {
     background-color: #fff;
     padding: 15px;
