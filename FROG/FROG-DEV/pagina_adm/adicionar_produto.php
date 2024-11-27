@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Adicionar Produto</title>
+    <title>Frog Tech - Adicionar Produto</title>
     <link href="../css/adiciona_produto.css" rel="stylesheet">
   
 </head>

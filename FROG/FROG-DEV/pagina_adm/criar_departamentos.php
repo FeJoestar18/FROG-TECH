@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Criar Departamento</title>
+    <title>Frog Tech - Criar Departamento</title>
     <link rel="stylesheet" href="../css/cria_departamentos.css">
 </head>
 <body>

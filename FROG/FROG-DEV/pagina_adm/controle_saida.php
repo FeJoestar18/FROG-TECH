@@ -17,7 +17,7 @@ $vendas = $stmt->fetchAll();
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Controle de Saída de Produtos</title>
+    <title>Frog Tech - Controle de Saída de Produtos</title>
     <link rel="stylesheet" href="../css/controle_saida.css">
     
 </head>

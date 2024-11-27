@@ -59,7 +59,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/add_checkout.css">
-    <title>Atualizar Informações</title>
+    <title>Frog Tech - Atualizar Informações</title>
     <script src="../js/buscar.js"></script>
 </head>
 <body>

@@ -11,7 +11,7 @@ $result = $conn->query($sql);
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Funcionários Cadastrados</title>
+    <title>Frog Tech - Funcionários Cadastrados</title>
     <link href="../css/funcionario.css" rel="stylesheet">
 </head>
 <body>

@@ -22,6 +22,7 @@ if (!$produto) {
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($produto['nome']) ?></title>
     <link rel="stylesheet" href="../css/Produto.css">
+    <title>Frog Tech - Produto</title>
 </head>
 <body>
 
@@ -70,7 +71,7 @@ if (!$produto) {
 </div>
 
 <footer>
-    <p>&copy; 2023 Frog Tech. Todos os direitos reservados.</p>
+    <p>&copy; 2024 Frog Tech. Todos os direitos reservados.</p>
 </footer>
 
 <script src="../js/Script.js"></script>

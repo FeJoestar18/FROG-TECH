@@ -12,7 +12,7 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuários Registrados</title>
+    <title>Frog Tech - Usuários Registrados</title>
     <link rel="stylesheet" href="../css/estilo_usuarios.css">
 </head>
 <body>

@@ -127,8 +127,43 @@ Abra o navegador e acesse http://localhost:8080.
 O seu projeto PHP será exibido.
 ```
 
-Conclusão
-Agora você tem três formas diferentes de rodar um projeto PHP no seu computador: WAMP, XAMPP ou Docker.
+### Passo 5: Passar os dados da pasta SQL para o MySQL Workbench ou phpMyAdmin
+
+#### Usando MySQL Workbench:
+
+1. **Abrir o MySQL Workbench**: Inicie o MySQL Workbench e conecte-se ao seu servidor MySQL.
+
+2. **Abrir o arquivo SQL**:
+   - Vá para o menu "File" e clique em "Open SQL Script".
+   - Selecione o arquivo SQL que você deseja importar da pasta SQL.
+
+3. **Executar o script**:
+   - Depois de abrir o arquivo SQL, o conteúdo será exibido na aba de SQL.
+   - Clique no ícone de raio ("Execute" ou "Run") para rodar o script no banco de dados selecionado.
+
+4. **Verificar dados**:
+   - Vá até o painel "Navigator" e clique em "Schemas" para verificar se as tabelas e dados foram importados corretamente.
+
+---
+
+#### Usando phpMyAdmin:
+
+1. **Acessar o phpMyAdmin**: Acesse o phpMyAdmin através do seu navegador. Normalmente, é acessado através de `http://localhost/phpmyadmin` ou o endereço correspondente ao seu servidor.
+
+2. **Selecionar o banco de dados**:
+   - No painel à esquerda, escolha o banco de dados onde você deseja importar os dados ou crie um novo banco de dados, se necessário.
+
+3. **Importar o arquivo SQL**:
+   - No painel principal, clique na aba "Importar".
+   - Na seção "Arquivo a ser importado", clique em "Escolher arquivo" e selecione o arquivo SQL da sua pasta.
+   - Clique em "Executar" para iniciar o processo de importação.
+
+4. **Verificar dados**:
+   - Depois de completar a importação, as tabelas e dados estarão disponíveis no banco de dados selecionado.
+   - Você pode navegar pelas tabelas e visualizar os dados inseridos.
+
+---
+
 
 
 

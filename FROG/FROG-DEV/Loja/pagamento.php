@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Pagamento Concluído</title>
+    <title>Frog Tech - Pagamento Concluído</title>
     <link rel="stylesheet" href="../css/pagamento_concluido.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
         <button type="submit">Ir para a página inicial</button>
     </form>
     <footer>
-    <p>&copy; 2023 Frog Tech. Todos os direitos reservados.</p>
+    <p>&copy; 2024 Frog Tech. Todos os direitos reservados.</p>
 </footer>
 </body>
 </html>

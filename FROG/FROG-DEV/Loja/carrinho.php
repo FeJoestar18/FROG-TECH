@@ -15,7 +15,7 @@ $carrinho = $_SESSION['carrinho'] ?? [];
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Carrinho</title>
+    <title>Frog Tech - Carrinho</title>
     <link rel="stylesheet" href="../css/Carrinho.css">
 </head>
 <body>

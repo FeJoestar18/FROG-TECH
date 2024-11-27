@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Checkout - Frog Tech</title>
+    <title>Frog Tech - Checkout</title>
     <link rel="stylesheet" href="../css/Check-out.css">
 </head>
 <body>
@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <script src="../js/Script.js"></script>
 
 <footer>
-    <p>&copy; 2023 Frog Tech. Todos os direitos reservados.</p>
+    <p>&copy; 2024 Frog Tech. Todos os direitos reservados.</p>
 </footer>
 </body>
 </html>

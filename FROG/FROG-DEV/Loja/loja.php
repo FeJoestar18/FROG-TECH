@@ -11,7 +11,7 @@ $produtos = $stmt->fetchAll();
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Loja - Frog Tech</title>
+    <title>Frog Tech - Loja</title>
    <style> 
 
 * {
@@ -274,7 +274,7 @@ button[type="submit"]:hover {
         ?>
     </div>
     <footer>
-        <p>&copy; 2023 Frog Tech. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Frog Tech. Todos os direitos reservados.</p>
     </footer>
     <script src="../js/Script.js"></script>
 </body>
