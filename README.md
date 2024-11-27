@@ -115,7 +115,7 @@ Com esses planos, o **Frog Tech** busca liderar o mercado, transformando ideias 
 Linkedin dos Participantes
 ---
 
-[Meu LinkedIn](www.linkedin.com/in/rayssa-leite-pires-096baa248)
+[Meu LinkedIn](https://www.linkedin.com/in/rayssa-leite-pires-096baa248)
 
 [Meu LinkedIn](https://www.linkedin.com/in/guilherme-silva-8b429a28a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
 
@@ -127,7 +127,7 @@ Linkedin dos Participantes
 
 [Meu LinkedIn](https://www.linkedin.com/in/arthur-godwin-91a5b9306?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
-[Meu LinkdIn](www.linkedin.com/in/felipe-amaro-souza-de-jesus-47964130a)
+[Meu LinkdIn](https://www.linkedin.com/in/felipe-amaro-souza-de-jesus-47964130a)
 
 
 
