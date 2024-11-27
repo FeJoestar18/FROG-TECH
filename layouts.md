@@ -1,7 +1,7 @@
 ### **Layouts**
 ---
 ### Logo 
-![Usuario - Start](docs/simbolo1.png)
+![Usuario - logo](docs/simbolo1.jpeg)
 ---
 ### Tela de Usuario
 ---
