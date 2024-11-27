@@ -123,7 +123,7 @@ header {
     display: block;
 }
 
-/* TESTE PARA VER SE VOCÊ REALMENTE VIU, VOCÊ COME BOSTA? */
+
 footer {
     background-color: white;
     color: black;
