@@ -3,13 +3,29 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
+-- Tempo de geração: 27/11/2024 às 13:45
 -- Versão do servidor: 8.3.0
 -- Versão do PHP: 8.2.18
 
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
--- Banco de dados: `frog`
 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `frog teste`
+--
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `departamentos`
+--
 
 DROP TABLE IF EXISTS `departamentos`;
 CREATE TABLE IF NOT EXISTS `departamentos` (
@@ -20,48 +36,55 @@ CREATE TABLE IF NOT EXISTS `departamentos` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-
+--
 -- Despejando dados para a tabela `departamentos`
+--
 
 INSERT INTO `departamentos` (`id`, `nome`, `descricao`, `data_criacao`) VALUES
-(3, 'Vendas', 'Responsável por realizar as vendas dos produtos, tanto online quanto presenciais.', '2024-11-13 15:57:46'),
-(4, 'Marketing', 'Responsável por criar campanhas publicitárias, estratégias de marketing digital e branding.', '2024-11-13 15:57:46'),
-(5, 'Suporte ao Cliente', 'Responsável por oferecer suporte aos clientes, respondendo dúvidas e solucionando problemas relacionados aos produtos.', '2024-11-13 15:57:46'),
-(6, 'Logística', 'Cuida do estoque, envio e recebimento de produtos, além da organização da distribuição.', '2024-11-13 15:57:46'),
-(7, 'Compras', 'Responsável por adquirir novos produtos e negociar com fornecedores.', '2024-11-13 15:57:46'),
-(8, 'Financeiro', 'Cuida da gestão financeira da empresa, incluindo contas a pagar e a receber, orçamentos e investimentos.', '2024-11-13 15:57:46'),
-(9, 'Recursos Humanos (RH)', 'Responsável pelo recrutamento, treinamento, desenvolvimento e gestão de pessoal.', '2024-11-13 15:57:46'),
-(10, 'TI (Tecnologia da Informação)', 'Responsável pela infraestrutura tecnológica da empresa, incluindo sistemas, servidores e manutenção de redes.', '2024-11-13 15:57:46'),
-(11, 'Desenvolvimento de Produto', 'Equipe dedicada à pesquisa e desenvolvimento de novos produtos ou melhorias nos produtos existentes.', '2024-11-13 15:57:46'),
-(12, 'Gestão de Qualidade', 'Responsável por garantir que os produtos atendam aos padrões de qualidade e sejam compatíveis com os requisitos de segurança.', '2024-11-13 15:57:46'),
-(13, 'Jurídico', 'Cuida dos assuntos legais da empresa, contratos, direitos autorais e compliance.', '2024-11-13 15:57:46'),
-(14, 'Atendimento ao Cliente (Call Center)', 'Focado em resolver problemas de clientes e realizar atendimento telefônico.', '2024-11-13 15:57:46'),
-(15, 'Design e UX (Experiência do Usuário)', 'Equipe de design responsável pela experiência do cliente no site, embalagens e interação com os produtos.', '2024-11-13 15:57:46'),
-(16, 'Pesquisa de Mercado', 'Responsável por coletar e analisar dados de mercado, tendências de consumo e comportamento do cliente.', '2024-11-13 15:57:46'),
-(17, 'Administração', 'Responsável pelas atividades administrativas gerais, como gestão de agenda, organização de documentos e suporte à alta direção da empresa.', '2024-11-13 15:57:46');
+(3, 'Vendas', 'Responsável por realizar as vendas dos produtos, tanto online quanto presenciais.', '2024-11-13 18:57:46'),
+(4, 'Marketing', 'Responsável por criar campanhas publicitárias, estratégias de marketing digital e branding.', '2024-11-13 18:57:46'),
+(5, 'Suporte ao Cliente', 'Responsável por oferecer suporte aos clientes, respondendo dúvidas e solucionando problemas relacionados aos produtos.', '2024-11-13 18:57:46'),
+(6, 'Logística', 'Cuida do estoque, envio e recebimento de produtos, além da organização da distribuição.', '2024-11-13 18:57:46'),
+(7, 'Compras', 'Responsável por adquirir novos produtos e negociar com fornecedores.', '2024-11-13 18:57:46'),
+(8, 'Financeiro', 'Cuida da gestão financeira da empresa, incluindo contas a pagar e a receber, orçamentos e investimentos.', '2024-11-13 18:57:46'),
+(9, 'Recursos Humanos (RH)', 'Responsável pelo recrutamento, treinamento, desenvolvimento e gestão de pessoal.', '2024-11-13 18:57:46'),
+(10, 'TI (Tecnologia da Informação)', 'Responsável pela infraestrutura tecnológica da empresa, incluindo sistemas, servidores e manutenção de redes.', '2024-11-13 18:57:46'),
+(11, 'Desenvolvimento de Produto', 'Equipe dedicada à pesquisa e desenvolvimento de novos produtos ou melhorias nos produtos existentes.', '2024-11-13 18:57:46'),
+(12, 'Gestão de Qualidade', 'Responsável por garantir que os produtos atendam aos padrões de qualidade e sejam compatíveis com os requisitos de segurança.', '2024-11-13 18:57:46'),
+(13, 'Jurídico', 'Cuida dos assuntos legais da empresa, contratos, direitos autorais e compliance.', '2024-11-13 18:57:46'),
+(14, 'Atendimento ao Cliente (Call Center)', 'Focado em resolver problemas de clientes e realizar atendimento telefônico.', '2024-11-13 18:57:46'),
+(15, 'Design e UX (Experiência do Usuário)', 'Equipe de design responsável pela experiência do cliente no site, embalagens e interação com os produtos.', '2024-11-13 18:57:46'),
+(16, 'Pesquisa de Mercado', 'Responsável por coletar e analisar dados de mercado, tendências de consumo e comportamento do cliente.', '2024-11-13 18:57:46'),
+(17, 'Administração', 'Responsável pelas atividades administrativas gerais, como gestão de agenda, organização de documentos e suporte à alta direção da empresa.', '2024-11-13 18:57:46');
 
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `funcionarios`
+--
 
 DROP TABLE IF EXISTS `funcionarios`;
 CREATE TABLE IF NOT EXISTS `funcionarios` (
   `id_funcionario` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
+  `nome` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `tempo_contrato` int DEFAULT NULL,
-  `endereco` varchar(250) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `endereco` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `salario` decimal(10,2) DEFAULT NULL,
-  `cpf` varchar(11) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `rg` varchar(11) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `atividade` enum('ativo','inativo') COLLATE utf8mb4_general_ci DEFAULT 'ativo',
-  `carteira_trabalho` varchar(11) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `turno` enum('matutino','noturno') COLLATE utf8mb4_general_ci NOT NULL,
+  `cpf` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `rg` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `atividade` enum('ativo','inativo') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'ativo',
+  `carteira_trabalho` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `turno` enum('matutino','noturno') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `idade` int DEFAULT NULL,
-  `unidade_tempo` varchar(10) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `unidade_tempo` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `departamento_id` int DEFAULT NULL,
   PRIMARY KEY (`id_funcionario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
 -- Despejando dados para a tabela `funcionarios`
+--
 
 INSERT INTO `funcionarios` (`id_funcionario`, `nome`, `email`, `tempo_contrato`, `endereco`, `salario`, `cpf`, `rg`, `atividade`, `carteira_trabalho`, `turno`, `idade`, `unidade_tempo`, `departamento_id`) VALUES
 (7, 'Gisele Ramos', 'gisele.ramos@example.com', 5, 'Rua G, 145', 4800.00, '55566677788', 'MG5556667', 'ativo', '789012', 'matutino', 38, 'anos', 9),
@@ -76,7 +99,11 @@ INSERT INTO `funcionarios` (`id_funcionario`, `nome`, `email`, `tempo_contrato`,
 (16, 'Pedro Azevedo', 'pedro.azevedo@example.com', 2, 'Rua P, 230', 4700.00, '11111111111', 'MG1111111', 'ativo', '678901', 'matutino', 31, 'anos', 3),
 (20, 'Victor Mendes', 'victor.mendes@example.com', 1, 'Rua T, 270', 4500.00, '55555555555', 'SP5555555', 'ativo', '012345', 'noturno', 29, 'anos', 8);
 
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `pedidos`
+--
 
 DROP TABLE IF EXISTS `pedidos`;
 CREATE TABLE IF NOT EXISTS `pedidos` (
@@ -88,26 +115,33 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
   KEY `cliente_id` (`cliente_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=153 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-
+--
 -- Despejando dados para a tabela `pedidos`
+--
 
 INSERT INTO `pedidos` (`id`, `cliente_id`, `total`, `status`) VALUES
+(1, 101, 450.00, 'Pendente'),
+(2, 102, 150.50, 'Pago');
 
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `pessoa`
+--
 
 DROP TABLE IF EXISTS `pessoa`;
 CREATE TABLE IF NOT EXISTS `pessoa` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `senha` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `nome` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `senha` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `cpf` char(14) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `telefone` varchar(15) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `cep` varchar(10) COLLATE utf8mb4_general_ci NOT NULL,
-  `endereco` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `cidade` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `pais` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `ponto_referencia` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `telefone` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `cep` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `endereco` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `cidade` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `pais` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `ponto_referencia` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `cpf` (`cpf`)
@@ -141,7 +175,11 @@ INSERT INTO `pessoa` (`id`, `nome`, `email`, `senha`, `cpf`, `telefone`, `cep`, 
 (166, 'teste 25 nov sp', 'teste25novsp21@mail.com', 'teste@123', '888.712.330-95', '(13) 3702-7749', '64012618', 'Quadra E1', 'Teresina', 'Brasil', 'TESTE-25-NOV-SP'),
 (167, 'Teste 25 nov sp 2', 'teste25novsp22@mail.com', 'teste@123', '737.851.928-96', '(16) 2676-1793', '04171005', 'Travessa Bodocó', 'São Paulo', 'Brasil', 'TESTE-25-NOV-SP-2');
 
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `produtos`
+--
 
 DROP TABLE IF EXISTS `produtos`;
 CREATE TABLE IF NOT EXISTS `produtos` (
@@ -154,7 +192,9 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
 -- Despejando dados para a tabela `produtos`
+--
 
 INSERT INTO `produtos` (`id`, `nome`, `descricao`, `preco`, `estoque`, `imagem`) VALUES
 (28, 'Placa de Vídeo NVIDIA GeForce RTX 3060', 'Placa de vídeo de alta performance para jogos', 3500.00, 778, 'oito.png'),
@@ -178,7 +218,11 @@ INSERT INTO `produtos` (`id`, `nome`, `descricao`, `preco`, `estoque`, `imagem`)
 (39, 'Impressora Multifuncional HP DeskJet 2776', 'Impressora multifuncional com Wi-Fi', 400.00, 200, 'dezenove.png'),
 (40, 'Apc Back-UPS BZ600-BR 600VA', 'No-break para proteção de equipamentos eletrônicos', 500.00, 100, 'vinte.png');
 
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `vendas`
+--
 
 DROP TABLE IF EXISTS `vendas`;
 CREATE TABLE IF NOT EXISTS `vendas` (
@@ -190,7 +234,9 @@ CREATE TABLE IF NOT EXISTS `vendas` (
   KEY `produto_id` (`produto_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
 -- Despejando dados para a tabela `vendas`
+--
 
 INSERT INTO `vendas` (`id`, `produto_id`, `quantidade`, `data_venda`) VALUES
 (28, 25, 1, '2024-11-25 11:50:42'),
@@ -204,3 +250,7 @@ INSERT INTO `vendas` (`id`, `produto_id`, `quantidade`, `data_venda`) VALUES
 (20, 29, 100, '2024-11-15 15:25:50'),
 (19, 25, 11, '2024-11-14 10:30:31');
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
