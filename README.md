@@ -112,7 +112,7 @@ Com esses planos, o **Frog Tech** busca liderar o mercado, transformando ideias 
 
 ---
 
-##Linkedin dos Participantes
+Linkedin dos Participantes
 ---
 
 [Meu LinkedIn](www.linkedin.com/in/rayssa-leite-pires-096baa248)
