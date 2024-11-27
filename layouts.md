@@ -1,11 +1,11 @@
 ### **Layouts**
 ---
 ### Logo 
-![Usuario - Start](../img/logo2.png)
+![Usuario - Start](../docs/simbolo1.png)
 ---
 ### Tela de Usuario
 ---
-![Usuario - Start](../docs/start.png)
+![Usuario - Start](docs/start.png)
 ![Login](../docs/Login.png)
 ![Registro](../docs/registro.png)
 ![Usuario - Home](../docs/Home.png)

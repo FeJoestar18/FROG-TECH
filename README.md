@@ -1,158 +1,105 @@
-# **Frog Tech - E-commerce de Tecnologias**
-
-## **Visão, Missão e Valores**
-
-### **Visão**
-Ser referência no mercado de e-commerce de tecnologias, oferecendo produtos inovadores, com um atendimento de excelência, buscando sempre a melhor experiência para o usuário.
-
-### **Missão**
-Proporcionar aos nossos clientes um ambiente online seguro e fácil de usar, onde possam adquirir as melhores soluções tecnológicas, sempre com qualidade, confiabilidade e suporte contínuo.
-
-### **Valores**
-- **Qualidade**: Compromisso com a excelência de nossos produtos e serviços.
-- **Inovação**: Buscar sempre novas tecnologias e ideias criativas.
-- **Segurança**: Garantir a proteção de dados e informações dos nossos clientes.
-- **Sustentabilidade**: Trabalhar com práticas que minimizem impactos ambientais.
+# **Frog Tech**
 
 ## **Sobre o Projeto**
+O projeto **Frog Tech** é um e-commerce de produtos tecnológicos desenvolvido com tecnologias modernas e foco em uma experiência de usuário fluida e eficiente. Ele foi projetado para oferecer funcionalidades essenciais para um e-commerce, desde a navegação e busca por produtos até o gerenciamento de pedidos e usuários.
 
-O **Frog Tech** é uma plataforma de e-commerce especializada na venda de tecnologias. Nosso objetivo é facilitar a vida de quem busca soluções práticas, acessíveis e de alta performance em dispositivos eletrônicos e componentes. Através de uma interface moderna e intuitiva, buscamos proporcionar a melhor experiência de compra.
+---
+
+## **Funcionalidades**
+
+### 1. **Gestão de Produtos**
+- Adição, edição e exclusão de produtos no painel administrativo.
+- Sistema de categorias para organizar os produtos por tipo ou marca.
+- Exibição de informações detalhadas de cada produto, incluindo preço, descrição, especificações e imagens.
+
+### 2. **Carrinho de Compras**
+- Adicionar e remover produtos.
+- Visualização de preços atualizados em tempo real.
+- Cálculo de subtotal e total com base na quantidade de itens.
+
+### 3. **Gerenciamento de Usuários**
+- Cadastro e login de usuários.
+- Perfil de usuário com histórico de compras.
+- Sistema de redefinição de senha.
+
+### 4. **Sistema de Pedidos**
+- Finalização de compras com detalhes de endereço e preferências do cliente.
+- Histórico de pedidos para que o cliente possa rastrear compras passadas.
+- Status do pedido (processando, enviado, entregue).
+
+### 5. **Busca e Filtros Avançados**
+- Campo de busca para encontrar produtos rapidamente.
+- Filtros por categoria, preço e relevância.
+
+### 6. **Painel Administrativo**
+- Gerenciamento de usuários, pedidos e produtos.
+- Estatísticas de vendas e relatórios de desempenho.
+
+### 7. **Design Responsivo**
+- Interfaces criadas no Figma para garantir uma boa experiência tanto em dispositivos móveis quanto em desktops.
+- Layouts otimizados para diferentes tamanhos de tela.
+
+---
+
+## **Diferenciais**
+- **Desempenho otimizado**: A aplicação utiliza recursos modernos do PHP 8.2 e consultas eficientes em MySQL.
+- **Interatividade aprimorada**: JavaScript foi empregado para criar uma experiência de compra dinâmica e responsiva.
+- **Foco no design**: O uso do Figma possibilitou um layout profissional, com atenção aos detalhes de usabilidade e estética.
+
+
 
 ## **Tecnologias Utilizadas**
-
-- **PHP 8.2.18**: Linguagem de programação que usamos para o back-end.
-- **MySQL / phpMyAdmin**: Banco de dados utilizado para armazenar os dados dos produtos, usuários e transações.
-- **CSS**: Para estilização da interface.
-- **JavaScript**: Para interatividade na interface.
-
----
-
-## **Configuração do Ambiente de Desenvolvimento**
-
-### **Requisitos**
-- **PHP 8.2** ou superior instalado.
-- **XAMPP**, **WAMP** ou **Docker** para configurar o servidor Apache e MySQL.
-
-### **Importe o banco de dados:**
-
-Abra o phpMyAdmin ou MySQL Workbench.
-Importe o arquivo SQL presente no repositório para criar a estrutura do banco de dados.
-Configure seu ambiente local:
-
-Se estiver usando o XAMPP, mova os arquivos para a pasta htdocs.
-Se estiver usando o WAMP, mova para a pasta www.
-Inicie o servidor:
-
-No XAMPP/WAMP, inicie os serviços Apache e MySQL.
-Acesse o projeto:
-
-Abra o navegador e vá até http://localhost/[nome_do_projeto] para visualizar o site.
+- **PHP 8.2**: Utilizado para a lógica do back-end, construção de APIs e integração com o banco de dados.
+- **JavaScript**: Implementado no front-end para interatividade, validação de formulários e melhorias na experiência do usuário.
+- **MySQL**: Banco de dados relacional utilizado para armazenar informações sobre produtos, usuários, pedidos e categorias.
+- **Figma**: Ferramenta utilizada para criar protótipos e wireframes, garantindo um design coeso e otimizado.
 
 ---
 
-### **Comandos Git - Passo a Passo**
+## **Implementações Futuras**
 
-1. Clonar o Repositório:
-Clone o repositório do GitHub ou GitLab para sua máquina local:
+### 1. **Integração de Pagamentos Online**
+- Métodos de pagamento como cartões de crédito, Pix e carteiras digitais (ex.: PayPal, Google Pay).
+- Conformidade com padrões como PCI-DSS, garantindo segurança nos dados financeiros.
 
-git clone <URL_DO_REPOSITORIO>
-(O que ele faz: Baixa uma cópia do repositório para o seu diretório local.)
+### 2. **Inteligência Artificial (IA)**
+- **Recomendações Personalizadas**: Sugestões de produtos com base no histórico de navegação e compras.
+- **Chatbot com IA**: Suporte ao cliente 24/7 para dúvidas e problemas.
 
-2. Abrir o projeto no seu editor de código:
+### 3. **Marketplace**
+- Permitir que outros vendedores cadastrem produtos, ampliando o catálogo.
+- Ferramentas para gerenciar parceiros e comissões.
 
-code .
-(O que ele faz: Abre o projeto no Visual Studio Code )(ou qualquer editor configurado).
+### 4. **Sistema de Avaliação e Reviews**
+- Avaliações e notas dos produtos pelos clientes.
+- Destaque para os produtos mais bem avaliados e filtros baseados na reputação.
 
-3. Adicionar Arquivos ao Repositório:
+### 5. **Gamificação e Fidelização**
+- **Sistema de pontos**: Acúmulo de pontos para troca por descontos ou produtos.
+- **Programas de fidelidade**: Acesso antecipado a lançamentos e promoções exclusivas.
 
-git add .
-(O que ele faz: Adiciona todos os arquivos modificados ao índice do Git, ou seja, prepara-os para o próximo commit.)
+### 6. **Entrega Inteligente**
+- Parcerias com empresas de logística para entregas rápidas e rastreamento em tempo real.
+- Sistema para calcular automaticamente o método de entrega mais eficiente.
 
-4. Commit das Alterações:
+### 7. **Aplicativo Mobile**
+- Desenvolvimento de aplicativos para Android e iOS, com notificações push para promoções e rastreamento de pedidos.
 
-git commit -m "Mensagem do commit"
-(O que ele faz: Registra suas alterações no histórico do repositório com uma mensagem explicativa.)
-
-5. Enviar Alterações para o Repositório Remoto:
-
-git push origin main
-(O que ele faz: Envia as alterações locais para o repositório remoto, no branch main.)
-
-6. Atualizar o Repositório Local com as Últimas Alterações:
-
-git pull origin main
-(O que ele faz: Baixa e integra as últimas alterações feitas no repositório remoto para o seu repositório local.)
-
----
-
-### **Gerenciamento de Branches**
-
-7. Criar uma Nova Branch:
-
-**Se você precisar trabalhar em uma nova funcionalidade, crie uma nova branch:**
-
-
-git checkout -b nome_da_nova_branch
-(O que ele faz: Cria uma nova branch e muda para ela.)
-
-8. Listar as Branches:
-Para listar todas as branches do repositório:
-
-git branch
-(O que ele faz: Exibe todas as branches disponíveis no repositório.)
-
-9. Mudar para Outra Branch:
-Se precisar mudar para uma branch existente:
-
-git checkout nome_da_branch
-(O que ele faz: Muda para a branch especificada.)
-
-10. Excluir uma Branch:
-Para excluir uma branch local:
-
-git branch -d nome_da_branch
-(O que ele faz: Exclui a branch local especificada.)
+### 8. **Expansão Internacional**
+- Suporte a múltiplos idiomas e moedas para vendas globais.
+- Ferramentas para lidar com impostos e envio internacional.
 
 ---
 
-### **Desfazendo Alterações e Erros Comuns**
+## **Nosso Espírito Visionário**
+No **Frog Tech**, acreditamos que a tecnologia é uma plataforma para transformar a maneira como as pessoas consomem e interagem. Nosso compromisso vai além de um simples e-commerce; queremos ser um **ecossistema tecnológico completo** que inspire confiança, inovação e acessibilidade.
 
-11. Desfazer Mudanças em um Arquivo Modificado:
-Caso queira desfazer alterações em um arquivo modificado:
-
-git checkout -- nome_do_arquivo
-(O que ele faz: Restaura o arquivo para o último estado confirmado no repositório.)
-
-12. Desfazer o Último Commit:
-Se você cometeu algo errado e deseja desfazer o último commit:
-
-git reset --soft HEAD~1
-(O que ele faz: Remove o último commit, mas mantém as alterações locais.)
-
-13. Reverter um Commit Específico:
-Se você quiser reverter um commit anterior, mas manter o histórico intacto:
-
-git revert <ID_DO_COMMIT>
-(O que ele faz: Cria um novo commit que reverte as alterações de um commit anterior.)
+### **Mentalidade de Investimento**
+- **Adoção de tecnologias emergentes**: Como blockchain, para transações mais seguras.
+- **Automatização de processos internos**: Reduzindo custos operacionais e reinvestindo na experiência do cliente.
+- **Educação e impacto no mercado**: Planejamos criar um blog ou plataforma de aprendizado voltada para tecnologia, oferecendo tutoriais e insights.
 
 ---
 
-### Próximos Passos
-
-.Corrigir bugs que surgirem com o tempo.
-.Adicionar novos recursos conforme feedback dos usuários.
-
-### Como Contribuir
-
-Se você deseja contribuir com o projeto, siga os passos abaixo:
-
--Faça um fork do repositório.
--Clone o repositório para sua máquina.
--Crie uma nova branch para suas alterações.
--Faça as modificações necessárias e commit suas mudanças.
--Crie um pull request explicando suas alterações.
-
-
-
-
-
+## **O Futuro Está Aqui**
+Com esses planos, o **Frog Tech** busca liderar o mercado, transformando ideias inovadoras em realidade. Estamos prontos para investir, inovar e superar as expectativas dos nossos clientes, colaboradores e parceiros. 🚀
