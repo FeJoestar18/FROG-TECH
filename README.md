@@ -1,5 +1,11 @@
 # **Frog Tech**
 
+## Documentação
+
+- [Como Executar o Projeto](./How%20to%20run%20the%20Project.MD)
+- [Layouts](./layouts.md)
+--- 
+
 ## **Sobre o Projeto**
 O projeto **Frog Tech** é um e-commerce de produtos tecnológicos desenvolvido com tecnologias modernas e foco em uma experiência de usuário fluida e eficiente. Ele foi projetado para oferecer funcionalidades essenciais para um e-commerce, desde a navegação e busca por produtos até o gerenciamento de pedidos e usuários.
 
