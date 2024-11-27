@@ -129,6 +129,10 @@ Linkedin dos Participantes
 
 [Meu LinkedIn](https://www.linkedin.com/in/felipe-amaro-souza-de-jesus-47964130a)
 
+[Meu LinkedIn](https://www.linkedin.com/in/jo%C3%A3o-victor-pontes-lima-01483333a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
+
+[Meu LinkedIn]()
+
 
 
 
